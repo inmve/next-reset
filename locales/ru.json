@@ -78,5 +78,10 @@
   "notificationsHeading": "Получать уведомления",
   "checkWebsite": "Открыть сайт",
   "websiteComingSoon": "ссылка скоро появится",
-  "resetNotifications": "Для уведомлений о сбросах: **Watch → Custom → Releases**."
+  "resetNotifications": "Для уведомлений о сбросах: **Watch → Custom → Releases**.",
+  "bankedReset": "Доступен сохранённый сброс",
+  "bankedDate": "Используйте, когда нужно",
+  "bankedDetails": "Для подписчиков · объявлено {date}",
+  "sourceOn": "Объявлено {date} ↗",
+  "grokBotOnly": "Только Grok Bot"
 }
