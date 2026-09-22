@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="{{lang}}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="{{description}}">
+  <meta property="og:title" content="{{pageTitle}}">
+  <meta property="og:description" content="{{description}}">
+  <meta property="og:type" content="website">
+  <title>{{pageTitle}}</title>
+  {{canonical}}
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+  <script src="site.js" defer></script>
+</head>
+<body>
+<div id="reset-zen" lang="{{lang}}">
+<div class="product" data-variant="{{design}}">
+  <a class="skip-link" href="#updates">{{skip}}</a>
+  <div class="backdrop" aria-hidden="true"><div class="stars"></div><div class="sun"></div><div class="ridge"></div><div class="ridge near"></div><div class="water"></div></div>
+  <header class="product-header">
+    <a class="brand" href="./" aria-label="{{homeLabel}}"><span class="brand-mark" aria-hidden="true"></span>{{brand}}</a>
+  </header>
+  <main id="updates" class="home">
+    <div class="intro">
+      <p class="next-reset-question">{{nextResetQuestion}}</p>
+      <h1>{{heading}}</h1>
+      <p class="intro-sub">{{mechanism}}</p>
+      <p class="hero-proof"><a data-proof-source href="{{proofUrl}}" target="_blank" rel="noopener noreferrer" {{proofHidden}}>{{proofText}}</a><span data-no-proof {{noProofHidden}}>{{snapshot}}</span></p>
+      <a class="hero-action" href="{{actionUrl}}">{{actionLabel}}</a>
+      {{subscription}}
+    </div>
+    <div id="providers" class="providers">{{cards}}</div>
+    <p class="ride-note" {{subtitleHidden}}>{{subtitle}}</p>
+  </main>
+  <footer class="product-footer">
+    <span class="snapshot">{{snapshot}}</span>
+    <div class="release-links">{{sourceLink}}</div>
+  </footer>
+</div>
+<script id="release-state" type="application/json">{{state}}</script>
+</div>
+</body>
+</html>

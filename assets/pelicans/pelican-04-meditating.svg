@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240" role="img" aria-labelledby="m04-title m04-desc" data-pose="seated">
+  <title id="m04-title">Meditating pelican 4</title>
+  <desc id="m04-desc">A pelican meditates peacefully without a bicycle while waiting for a usage-reset announcement.</desc>
+  <g stroke="#263e39" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="77" cy="55" r="13" fill="#d89958" stroke="none" opacity=".65" />
+    <path d="M35 105 65 81 92 104 106 95 121 106" fill="none" stroke="#98b3a0" stroke-width="2" />
+    <path d="M61 204c7-8 28-11 45-10 27-8 60-7 86-2 21-2 46 2 58 11-38 10-148 13-189 1Z" fill="#98b3a0" fill-opacity=".35" stroke="none" />
+    <path d="M49 213c15 3 29 4 44 3m16 9c37 3 76 2 105-2m19-10c16-1 29-3 38-6" fill="none" stroke="#98b3a0" stroke-width="2" />
+    <path d="M140 78c-6 5-12 10-21 11l9 7-13 3c14 12 38 17 54 7 9-6 11-16 6-24-4-7-8-14-6-22 3-9-3-20-13-19-12 1-15 12-11 22 2 6 0 11-5 15Z" fill="#98b3a0" fill-opacity=".5" transform="translate(0 74)" />
+    <path d="M167 55 219 64l-45 2" fill="#d89958" transform="translate(0 74)" />
+    <path d="M219 64c-16 16-33 25-42 13l-7-13Z" fill="#d89958" fill-opacity=".55" transform="translate(0 74)" />
+    <path d="M154 52c2 3 5 4 8 1" fill="none" transform="translate(0 74)" />
+    <path d="M141 81c-5 8-2 18 8 20 8 2 14-1 16-5-6-2-11-6-13-11" fill="none" transform="translate(0 74)" />
+    <path d="M140 106c3 6 16 5 24-1m-33 7c10-6 23-1 31 2" fill="none" transform="translate(0 74)" />
+    <path d="M150 32v-5m-13 11-3-4m31 0 3-4" fill="none" stroke="#98b3a0" stroke-width="2" transform="translate(0 74)" />
+  </g>
+</svg>
