@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "snapshotAt": "2026-09-22T07:35:00Z",
   "coverage": "Selected public reset announcements, manually verified against original sources. Not a live feed.",
-  "repositoryUrl": "https://github.com/inmve/token-resets-site",
+  "repositoryUrl": "https://github.com/inmve/next-reset",
   "events": [
     {
       "id": "codex-announcement-2026-09-22",

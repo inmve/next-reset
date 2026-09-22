@@ -1,9 +1,11 @@
 {
-  "name": "Token Resets",
+  "name": "Next Reset",
   "design": 3,
   "pelicanDesign": 5,
   "locale": "en",
-  "siteUrl": "https://inmve.github.io/token-resets-site/",
-  "updatesRepository": "https://github.com/inmve/token-resets",
-  "sourceRepository": "https://github.com/inmve/token-resets-site"
+  "siteUrl": "https://inmve.github.io/next-reset/",
+  "updatesRepository": "https://github.com/inmve/token-limit-resets",
+  "sourceRepository": "https://github.com/inmve/next-reset",
+  "authorName": "@inmve",
+  "authorUrl": "https://github.com/inmve"
 }

@@ -6,7 +6,7 @@
   "announcedForToday": "Expected today",
   "announced": "Reset expected",
   "lastReset": "Last reset",
-  "waitingNote": "Use your tokens wisely. No rush.",
+  "waitingNote": "Take your time.",
   "pauseCycling": "Pause the bicycle",
   "resumeCycling": "Resume the ride",
   "footerNote": "No rush. No token targets.",
@@ -37,12 +37,12 @@
   "watchHelp": "Watch → Custom → Releases",
   "sourceCode": "Source & data",
   "snapshotLabel": "Data checked {date} UTC",
-  "sourceAt": "Posted {date} UTC ↗",
+  "sourceAt": "Announced {date} UTC ↗",
   "timeUnknown": "Time not specified",
   "dateUnknown": "Date not announced",
   "confirmationPending": "Confirmation pending",
   "lastConfirmed": "Last confirmed reset",
-  "daysSince": "{days} full days since confirmation",
+  "daysSince": "{days} days since update",
   "scopeUnknown": "Affected plans not specified",
   "quietTitle": "No need to rush.",
   "awaitingScope": "Announced date has passed · confirmation pending",
@@ -69,5 +69,8 @@
   "nextResetQuestion": "When is the next reset?",
   "shellTitle": "cd token-usage/limits; reset",
   "expectedTimeUnknown": "Expected · time not specified",
-  "maxPlans": "Max plans"
+  "maxPlans": "Max plans",
+  "nextResetTerm": "next reset",
+  "madeBy": "Made by {author}",
+  "feedback": "Feedback / report a reset"
 }
