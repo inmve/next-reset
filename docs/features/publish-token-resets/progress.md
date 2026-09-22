@@ -1,14 +1,14 @@
 # Publish Token Resets
 
 ## Current Status
-- Last Updated: 2026-09-22T10:27:59.674135+00:00
-- Status: Testing
-- Completion: 85%
+- Last Updated: 2026-09-22T10:33:06.059481+00:00
+- Status: Ready for Review
+- Completion: 100%
 
 ## Current Context
 - Working: static build, JavaScript syntax, original source links, cautious announcement status, English interface, Russian locale, animated cyclist and still waiting poses, desktop/mobile layout.
-- Not working: GitHub Pages is not enabled or deployed yet. Notification release has not been published.
-- Next: push feature branch, open PR, check CI, enable Pages, merge, verify live site; publish source-backed reset release in separate README-only repository.
+- Not working: No launch blockers remain. Future events require manual source verification and publication.
+- Next: For a new event, verify its original source, update data, rebuild, merge via feature PR, update the notification README and publish one meaningful release.
 
 ## Timeline
 - 2026-09-22T10:27:59.674135+00:00: initialized public repositories with GitHub-provided bootstrap commits; pulled main in both clones and created feature branches.
@@ -40,7 +40,13 @@
 - [x] Configure names and URLs.
 - [x] Build and check syntax.
 - [x] Review browser at desktop and mobile widths.
-- [ ] Open and validate PRs.
-- [ ] Enable and deploy GitHub Pages.
-- [ ] Verify public page and notification README.
-- [ ] Publish initial source-backed reset release.
+- [x] Open and validate PRs.
+- [x] Enable and deploy GitHub Pages.
+- [x] Verify public page and notification README.
+- [x] Publish initial source-backed reset release.
+
+## Publication update 2026-09-22T10:31:31.467544+00:00
+Both initial PRs were merged after local checks and successful website CI. GitHub Pages is configured for Actions. Deployment run: https://github.com/inmve/token-resets-site/actions/runs/35716265283. Minimal repository root verified to contain only README.md. Website progress record will be finalized after public verification.
+
+## Launch verified 2026-09-22T10:33:06.059481+00:00
+Website build and deployment completed successfully. Live https://inmve.github.io/token-resets-site/ opened in the browser with Token Resets branding, original sources, correct GitHub CTA, loaded styles, animated cyclist and no console errors or overflow. public/index.html is committed on main. The notification repository contains exactly README.md. First published release: https://github.com/inmve/token-resets/releases/tag/codex-2026-09-22-announced (not draft). GitHub notification delivery to individual subscribers was not tested; the release channel is ready. Browser push and automatic event monitoring remain outside v1.
