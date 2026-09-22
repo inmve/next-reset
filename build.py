@@ -5,6 +5,7 @@ from datetime import datetime, timezone
 from html import escape
 from urllib.parse import urlparse
 import json
+import hashlib
 import re
 import shutil
 import sys
@@ -110,6 +111,8 @@ proof_text = t('basedOnPost', author=proof_record['author'], date=timestamp(proo
 values = {key:escape(value) for key,value in strings.items()}
 values.update({
     'lang':config['locale'], 'design':str(design), 'brand':escape(config['name']),
+    'styleVersion':hashlib.sha256((ROOT/'src/style.css').read_bytes()).hexdigest()[:12],
+    'scriptVersion':hashlib.sha256((ROOT/'src/site.js').read_bytes()).hexdigest()[:12],
     'pageTitle':escape(t('statusPageTitle', status=heading, date=today)),
     'homeLabel':escape(t('homeLabel', name=config['name'])),
     'heading':'<br>'.join(escape(line) for line in heading.split('|')),

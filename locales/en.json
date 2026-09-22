@@ -46,7 +46,7 @@
   "scopeUnknown": "Affected plans not specified",
   "quietTitle": "No need to rush.",
   "awaitingScope": "Announced date has passed · confirmation pending",
-  "todayTimeUnknown": "Expected today",
+  "todayTimeUnknown": "Expected today · time not specified",
   "cyclingTitle": "Pelican riding a bicycle",
   "cyclingDescription": "A pelican pedals at an unhurried pace while a reset is announced. There is no rush.",
   "meditatingTitle": "Meditating pelican",

@@ -3,7 +3,7 @@
 ## Current Status
 Last Updated: 2026-09-22T12:03:35.954930+00:00
 Status: Ready for Review
-Completion: 90%
+Completion: 100%
 
 ## Current Context
 Working: Claude Code naming with Max scope preserved; former colored meditation illustration restored from history; enlarged captions below birds inside cards; single combined expected-time line; GitHub subscription block after cards.
@@ -34,8 +34,10 @@ No new blockers. Saved the previous feature's uncommitted completion note before
 ## Next Steps
 - [x] Implement approved changes.
 - [x] Verify locally.
-- [ ] Publish and verify live.
+- [x] Publish and verify live.
 
 2026-09-22T12:05:41.337746+00:00: release build, JS syntax, SVG parsing and matching locale keys passed. Browser verification at320/1100px: no overflow or console errors; two16px captions inside their corresponding cards; one CTA below cards; combined expected-time string once; Max scope preserved; only bicycle has animation.
 
 Latest approved copy: green status dot plus Expected today below date; user removed the time-not-specified clause. Shell-command header retained. Local diff check caught a trailing blank line before commit; removed it and rebuilt. An initial PR request could not run before that commit; no site code was published from that attempt.
+
+2026-09-22T12:13:11.220628+00:00: deployment35725498692 succeeded and live HTML verified. Live browser retained previous unversioned CSS (waiting-note rule, captions15px rather than16px). Follow-up feature/refine-expected-status adds content-based asset versions so already-open pages load matching styles/scripts.
