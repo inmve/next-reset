@@ -31,7 +31,7 @@
   "v5sub": "While the world refreshes, take a little pause.",
   "v5quiet": "Not every cycle needs to go faster.",
   "pageTitle": "{name} · AI usage resets, at a quieter pace",
-  "description": "Reset updates for Codex and Claude Code, linked to original announcements.",
+  "description": "Know when Codex and Claude Code limits reset, so you can use your remaining tokens on something you want to build.",
   "skip": "Skip to reset updates",
   "githubUpdates": "Get reset updates on GitHub",
   "watchHelp": "Watch → Custom → Releases",
@@ -72,5 +72,6 @@
   "maxPlans": "Max plans",
   "nextResetTerm": "next reset",
   "madeBy": "Made by {author}",
-  "feedback": "Feedback / report a reset"
+  "feedback": "Feedback / report a reset",
+  "benefit": "Know when Codex and Claude Code limits reset, so you can use your remaining tokens on something you want to build."
 }

@@ -87,7 +87,7 @@ for provider in data['providers']:
 <a class="source" href="{source}" target="_blank" rel="noopener noreferrer">{escape(source_text)}</a></div>
 <div class="bird-stage"><div class="bird">{svg}</div></div>{note}</article>''')
     records.append({**provider, 'announced':announced, 'expectedDate':expected, 'confirmedAt':event['announcedAt'], 'source':event['source'], 'scopeLabelKey':event.get('scopeLabelKey'), 'author':event.get('author', provider['company'])})
-    rows.append(f"**{provider['name']} / {provider['company']}** — {row_state} · [announcement]({event['source']})")
+    rows.append(f"## {provider['name']} / {provider['company']}\n\n{row_state[0].upper() + row_state[1:]} · [announcement]({event['source']})")
 today_plans = [record for record in records if record['announced'] and record['expectedDate'] == today]
 dated_plans = sorted((record for record in records if record['announced'] and record['expectedDate'] and record['expectedDate'] > today), key=lambda record:record['expectedDate'])
 undated_plans = [record for record in records if record['announced'] and not record['expectedDate']]
@@ -134,6 +134,6 @@ shutil.copy(ROOT/'data/events.json', OUT/'events.json')
 (OUT/'favicon.svg').write_text('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><rect width="40" height="40" rx="12" fill="#f6e8da"/><path d="M31 15A13 13 0 1 0 32 24" fill="none" stroke="#344a3c" stroke-width="3" stroke-linecap="round"/></svg>')
 readme_title = (', '.join(active) + (' reset is upcoming' if len(active)==1 else ' resets are upcoming')) if active else 'No need to rush'
 site_link = f"Less minimalistic version — [{config['name']}]({config['siteUrl']})." if config.get('siteUrl') else 'Less minimalistic version — site link coming soon.'
-readme = '# ' + readme_title + '\n\n' + ('\\' + '\n').join(rows) + '\n\nStar to save this repo. For reset notifications: **Watch → Custom → Releases**.\n\n' + site_link + '\n'
+readme = '# ' + readme_title + '\n\n' + '\n\n'.join(rows) + '\n\nStar to save this repo. For reset notifications: **Watch → Custom → Releases**.\n\n' + site_link + '\n'
 (ROOT/'minimal-README.md').write_text(readme)
 print('Built public/index.html and minimal-README.md. ' + ('Addresses pending: '+', '.join(missing) if missing else 'All public addresses configured.'))
