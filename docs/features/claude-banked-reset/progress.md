@@ -29,3 +29,5 @@ Search failed to extract Anthropic page; direct HTTPS fetch returned official te
 ## Latest decisions and verification
 2026-09-22T17:03:36.726555+00:00 — Build, Python/JS syntax, diff whitespace and three-provider state assertions passed. Grok uses previously read original September 5 announcement, explicitly scoped to Grok Bot. Reports of September 17 reset remain unverified.
 Existing free-ai-coding repository replaces obsolete catalogue with reset-only README as requested. Removed old translated catalogues and generator so stale offers cannot reappear; full content remains in Git history. Existing token-limit-resets repository remains untouched, no destructive remote deletion.
+
+2026-09-22: User excludes banked resets from free-ai-coding only. Generator skips banked README rows, preserving the website card.
