@@ -6,7 +6,7 @@
   "announcedForToday": "Ожидается сегодня",
   "announced": "Ожидается сброс",
   "lastReset": "Последний сброс",
-  "waitingNote": "Не торопись.",
+  "waitingNote": "Используй токены с пользой.",
   "pauseCycling": "Остановить велосипед",
   "resumeCycling": "Продолжить поездку",
   "footerNote": "Без спешки. Без плана по токенам.",
@@ -77,5 +77,6 @@
   "siteTitle": "Пора тратить токены или медитировать?",
   "notificationsHeading": "Получать уведомления",
   "checkWebsite": "Открыть сайт",
-  "websiteComingSoon": "ссылка скоро появится"
+  "websiteComingSoon": "ссылка скоро появится",
+  "resetNotifications": "Для уведомлений о сбросах: **Watch → Custom → Releases**."
 }

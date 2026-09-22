@@ -6,7 +6,7 @@
   "announcedForToday": "Expected today",
   "announced": "Reset expected",
   "lastReset": "Last reset",
-  "waitingNote": "Take your time.",
+  "waitingNote": "Make your tokens count.",
   "pauseCycling": "Pause the bicycle",
   "resumeCycling": "Resume the ride",
   "footerNote": "No rush. No token targets.",
@@ -77,5 +77,6 @@
   "siteTitle": "Time to spend tokens or meditate?",
   "notificationsHeading": "Get notifications",
   "checkWebsite": "Check out website",
-  "websiteComingSoon": "site link coming soon"
+  "websiteComingSoon": "site link coming soon",
+  "resetNotifications": "For reset notifications: **Watch → Custom → Releases**."
 }
