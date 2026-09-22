@@ -47,4 +47,3 @@
 #reset-zen .announced .scope::before{content:"";width:5px;height:5px;flex:0 0 5px;border-radius:50%;background:var(--green)}
 
 #reset-zen .next-reset-question mark{background:var(--ink);color:var(--paper);padding:3px 5px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
-
