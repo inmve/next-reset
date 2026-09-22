@@ -83,5 +83,16 @@
   "bankedDate": "Используйте, когда нужно",
   "bankedDetails": "Для подписчиков · объявлено {date}",
   "sourceOn": "Объявлено {date} ↗",
-  "grokBotOnly": "Только Grok Bot"
+  "grokBotOnly": "Только Grok Bot",
+  "ping": "Пинг @{handle} ↗",
+  "trackedDays": "{days} дней с последнего отслеженного сброса",
+  "relativeToday": "сегодня",
+  "relativeYesterday": "вчера",
+  "relativeDays": "{days} дней назад",
+  "tweetLead": "Привет, @{handle}! Последний отслеженный сброс {provider} — {when}.",
+  "tweetCompleted": "{provider}: лимиты сброшены {when}.",
+  "tweetBanked": "{provider}: сохранённый сброс объявлен {when}.",
+  "tweetExpected": "{provider}: сброс ожидается {date} (не подтверждён).",
+  "tweetUndated": "{provider}: ожидается сброс, дата неизвестна.",
+  "tweetAsk": "Планируется ли сброс для {provider}?"
 }

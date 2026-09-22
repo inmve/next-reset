@@ -47,3 +47,7 @@
 #reset-zen .announced .scope::before{content:"";width:5px;height:5px;flex:0 0 5px;border-radius:50%;background:var(--green)}
 
 #reset-zen .next-reset-question mark{background:var(--ink);color:var(--paper);padding:3px 5px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+
+#reset-zen .ping-request{margin:12px auto 0;font-size:16px}
+#reset-zen .ping-days{font-size:12px;color:var(--muted);margin:0 0 6px}
+#reset-zen .ping-link{display:inline-block;padding:8px 0}
