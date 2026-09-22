@@ -3,7 +3,7 @@
   "announcedTitle": "A little more|room to breathe.",
   "announcedSubtitle": "{providers} · Perhaps we can stop counting tokens for a day.",
   "announcedCaption": "The pelican has no throughput targets.",
-  "announcedForToday": "Enjoy the ride!",
+  "announcedForToday": "Expected today",
   "announced": "Reset expected",
   "lastReset": "Last reset",
   "waitingNote": "Use your tokens wisely. No rush.",
@@ -49,8 +49,8 @@
   "todayTimeUnknown": "Today · time not specified",
   "cyclingTitle": "Pelican riding a bicycle",
   "cyclingDescription": "A pelican pedals at an unhurried pace while a reset is announced. There is no rush.",
-  "meditatingTitle": "Meditating pelican",
-  "meditatingDescription": "A pelican sits quietly without a bicycle, waiting for a reset announcement.",
+  "meditatingTitle": "Pelican resting on a stone",
+  "meditatingDescription": "A fine monochrome drawing of a pelican with a closed eye, resting on a smooth stone.",
   "balancingTitle": "Pelican resting on one leg",
   "balancingDescription": "A closed-eyed pelican rests on one leg, with its wings folded. There is no need to hurry.",
   "plannedToday": "{providers} limits are likely to reset today",
@@ -66,5 +66,6 @@
   "mechanism": "Public reset updates for Codex and Claude Max, with original sources.",
   "basedOnPost": "Based on a post by {author} · {date} UTC ↗",
   "seeUpdates": "See reset updates",
-  "nextResetQuestion": "When is the next reset?"
+  "nextResetQuestion": "When is the next reset?",
+  "shellTitle": "cd token-usage/limits; reset"
 }

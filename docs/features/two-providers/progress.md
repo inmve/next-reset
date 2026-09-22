@@ -33,3 +33,8 @@ None.
 - [ ] Publish via PRs and verify Pages.
 
 2026-09-22T11:43:46.797108+00:00: release build and syntax passed; browser confirms two columns, left-aligned note, no Grok and no horizontal overflow.
+
+## Follow-up: remove unnecessary copy
+User requested sentence case, removal of hero mechanism and duplicate source link, and a shell-command identity. Implemented header `$ cd token-usage/limits; reset`, sentence case provider/status labels, removed hero description/source and corresponding JS references. Original sources remain on cards. Replaced duplicate Enjoy the ride card badge with factual Expected today; retained the requested left-aligned bottom note. User selected a thin monochrome pelican resting on a stone. Replaced meditation SVG05 with a still fine-line drawing, closed eye, stone, no lotus or decorations; updated both locale accessibility descriptions.
+
+Final local verification: build, syntax and browser checks passed. At 320px no overflow; all labels use natural case; hero proof removed without JS errors; new monochrome resting pelican visually inspected. Await latest PR CI and Pages deployment.
