@@ -1,13 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240" role="img" aria-labelledby="m05-title m05-desc" data-pose="seated">
-  <title id="m05-title">Meditating pelican 5</title>
-  <desc id="m05-desc">A pelican meditates peacefully without a bicycle while waiting for a usage-reset announcement.</desc>
-  <g stroke="#263e39" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" transform="translate(0 43)">
-    <path d="M149 88c-6-15 0-34 12-42 12-9 27-4 30 8l-10 17c-4 8-1 15 8 24 14 15 9 31-10 36h-28c-22-4-29-16-23-28 4-8 12-13 21-15Z" fill="#98b3a0" fill-opacity=".22" />
-    <path d="m189 54 70 9c-20 20-44 24-77 8" fill="#d89958" />
-    <path d="m190 63 69 0" stroke-width="3" fill="none" />
-    <path d="M167 58q5 5 10 0" stroke-width="3" fill="none" />
-    <path d="M139 97q-4 16 18 21m21-25q13 16-9 25" fill="none" />
-    <path d="M157 118c-15-11-35-8-35 1s22 17 41 5c18 12 41 4 40-5s-20-12-34-1" fill="#98b3a0" />
-    <path d="M157 118q6 5 12 0" stroke-width="3" fill="none" />
-    </g>
-<ellipse cx="157" cy="204" rx="46" ry="5" fill="#98b3a0" opacity=".2" /></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 260" role="img" aria-labelledby="p05-title p05-desc">
+<title id="p05-title">Pelican resting on a stone</title>
+<desc id="p05-desc">A fine monochrome drawing of a pelican with a closed eye, resting on a smooth stone.</desc>
+<g fill="none" stroke="#263e39" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+<path d="M103 215c5-15 25-21 56-22 37-2 73 3 92 15 7 5 8 11 1 14-27 9-113 8-144 0-7-2-8-4-5-7Z"/>
+<path d="M129 210c24-8 62-9 84-3" opacity=".35"/>
+<path d="M136 184c-28-3-39-23-30-42 9-18 33-17 49-22 10-3 14-14 13-26-2-21 6-39 23-43 17-4 32 9 31 24l-7 29c-2 11 0 23 9 37 9 15 4 32-12 39-19 9-52 7-76 4Z"/>
+<path d="m218 74 90 15-91 9"/>
+<path d="M308 89c-20 23-60 34-92 9"/>
+<path d="M190 73q6 6 13 0"/>
+<path d="M128 146c18-9 42-7 58 4-10 17-28 25-47 24"/>
+<path d="m108 147-15-4 11 15M155 187l-2 7m26-7 3 7"/>
+</g>
+</svg>

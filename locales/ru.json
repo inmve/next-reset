@@ -3,7 +3,7 @@
   "announcedTitle": "Чуть больше|простора для выдоха.",
   "announcedSubtitle": "{providers} · Может, хоть день не будем считать токены.",
   "announcedCaption": "У пеликана нет плана по токенам.",
-  "announcedForToday": "Приятной поездки!",
+  "announcedForToday": "Ожидается сегодня",
   "announced": "Ожидается сброс",
   "lastReset": "Последний сброс",
   "waitingNote": "Трать токены с умом. Без спешки.",
@@ -49,8 +49,8 @@
   "todayTimeUnknown": "Сегодня · время не указано",
   "cyclingTitle": "Пеликан на велосипеде",
   "cyclingDescription": "Пеликан неспешно крутит педали: сброс объявлен, спешить некуда.",
-  "meditatingTitle": "Медитирующий пеликан",
-  "meditatingDescription": "Пеликан спокойно сидит без велосипеда в ожидании объявления о сбросе.",
+  "meditatingTitle": "Пеликан на камне",
+  "meditatingDescription": "Тонкий монохромный рисунок: пеликан с закрытым глазом спокойно сидит на гладком камне.",
   "balancingTitle": "Пеликан на одной ноге",
   "balancingDescription": "Пеликан отдыхает на одной ноге с закрытыми глазами и сложенными крыльями. Спешить некуда.",
   "plannedToday": "Лимиты {providers}, вероятно, сбросят сегодня",
@@ -63,8 +63,9 @@
   "noResetsToday": "Сегодня без сбросов",
   "enjoyTheRide": "Приятной поездки.",
   "statusPageTitle": "{status} ({date})",
-  "mechanism": "Публичные обновления о сбросах Codex, Claude Max и Grok Bot со ссылками на первоисточники.",
+  "mechanism": "Публичные обновления о сбросах Codex и Claude Max со ссылками на первоисточники.",
   "basedOnPost": "По публикации {author} · {date} UTC ↗",
   "seeUpdates": "Посмотреть обновления",
-  "nextResetQuestion": "Когда следующий сброс?"
+  "nextResetQuestion": "Когда следующий сброс?",
+  "shellTitle": "cd token-usage/limits; reset"
 }

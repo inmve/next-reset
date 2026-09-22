@@ -17,12 +17,12 @@
 #reset-zen .hero-action{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:12px 22px;background:var(--ink);border:1px solid var(--ink);border-radius:2px;color:var(--paper);font:12px/1.5 var(--mono);text-decoration:none;transition:background .15s}
 #reset-zen .hero-action:hover{background:#3b5343}
 #reset-zen .subscription-note{font:11px/1.7 var(--mono);max-width:520px;margin:14px auto 0;color:var(--muted)}
-#reset-zen .providers{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;scroll-margin-top:24px}
+#reset-zen .providers{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px;scroll-margin-top:24px}
 #reset-zen .provider{padding:27px 18px 20px;min-width:0;text-align:center;border:1px solid var(--line);background:var(--surface);border-radius:3px}
 #reset-zen .provider.announced{background:#edf3e6;border-color:#aabb9f}
 #reset-zen .provider-name{font:600 14px/1.5 var(--mono);letter-spacing:-.3px;margin:0 0 26px}
-#reset-zen .provider-name span{font:400 10px/1.5 var(--mono);letter-spacing:.08em;text-transform:uppercase;display:block;margin-top:3px;color:var(--muted)}
-#reset-zen .status-label{font:10px/1.5 var(--mono);text-transform:uppercase;letter-spacing:.05em;display:flex;align-items:center;justify-content:center;gap:7px;flex-wrap:wrap;color:var(--muted);margin:0 0 12px}
+#reset-zen .provider-name span{font:400 10px/1.5 var(--mono);letter-spacing:.08em;display:block;margin-top:3px;color:var(--muted)}
+#reset-zen .status-label{font:10px/1.5 var(--mono);letter-spacing:.05em;display:flex;align-items:center;justify-content:center;gap:7px;flex-wrap:wrap;color:var(--muted);margin:0 0 12px}
 #reset-zen .status-dot{width:5px;height:5px;flex:0 0 5px;border-radius:50%;background:var(--wait)}
 #reset-zen .announced .status-dot{background:var(--green)}
 #reset-zen .when{font:400 clamp(25px,2.65vw,32px)/1.3 var(--mono);letter-spacing:-1.2px;margin:0;color:var(--wait)}
@@ -32,7 +32,7 @@
 #reset-zen .bird-stage{display:flex;align-items:center;justify-content:center;max-width:218px;min-height:183px;margin:19px auto 0}
 #reset-zen .bird{width:100%}#reset-zen .bird svg{width:100%;height:auto;display:block;overflow:visible}
 #reset-zen .waiting-note{font-size:11px;color:var(--muted);margin:8px 0 0}
-#reset-zen .ride-note{text-align:center;font:12px/1.6 var(--mono);color:var(--muted);margin:30px 0}
+#reset-zen .ride-note{text-align:left;font:12px/1.6 var(--mono);color:var(--muted);margin:30px 0}
 #reset-zen .product-footer{position:relative;max-width:1100px;margin:30px auto 0;padding:22px 0 28px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:20px;color:var(--muted);font:10px/1.7 var(--mono)}
 #reset-zen .snapshot{font-variant-numeric:tabular-nums}
 #reset-zen .release-links{display:flex;gap:20px;flex-wrap:wrap}
@@ -41,3 +41,6 @@
 @media(max-width:760px){#reset-zen .providers{grid-template-columns:1fr;max-width:480px;margin:auto}#reset-zen .intro{margin:38px auto 36px}#reset-zen .provider{padding:28px 20px 22px}#reset-zen .provider-name span{display:inline;margin:0 0 0 8px}#reset-zen .bird-stage{max-width:205px;min-height:166px}#reset-zen .product-footer{align-items:flex-start;flex-direction:column;gap:10px}}
 @media(max-width:440px){#reset-zen .product-header,#reset-zen .home,#reset-zen .product-footer{margin-left:20px;margin-right:20px}#reset-zen .product-header{padding:20px 0}#reset-zen .brand{font-size:15px;letter-spacing:-.6px}#reset-zen .brand-mark{width:17px;height:17px}#reset-zen .intro{margin-top:30px}#reset-zen h1{font-size:29px;letter-spacing:-1.3px}#reset-zen .intro-sub{font-size:14px;margin-top:18px}#reset-zen .hero-proof{font-size:10px;margin:15px 0 18px}#reset-zen .subscription-note{font-size:10px}#reset-zen .provider{padding:25px 14px 20px}#reset-zen .when{font-size:29px}}
 @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+
+#reset-zen .brand code{font:inherit;letter-spacing:inherit}#reset-zen .shell-prompt{color:var(--muted)}
+#reset-zen .hero-action{margin-top:24px}

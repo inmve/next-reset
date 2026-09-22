@@ -50,15 +50,6 @@
     const subtitle = root.querySelector('.ride-note');
     subtitle.hidden = !(active.length || completedToday.length);
     subtitle.textContent = t('enjoyTheRide');
-    const proof = todayPlans[0] || cards.find(card => completedToday.includes(card.name)) || datedPlans[0] || active[0];
-    const source = root.querySelector('[data-proof-source]');
-    source.hidden = !proof;
-    root.querySelector('[data-no-proof]').hidden = Boolean(proof);
-    if (proof) {
-      source.href = proof.source;
-      const date = new Intl.DateTimeFormat(config.locale, {month:'short',day:'numeric',hour:'2-digit',minute:'2-digit',hour12:false,timeZone:'UTC'}).format(new Date(proof.confirmedAt));
-      source.textContent = t('basedOnPost', {author:proof.author,date});
-    }
     document.title = t('statusPageTitle', {status:title, date:today});
     document.querySelector('meta[property="og:title"]').content = document.title;
   }
