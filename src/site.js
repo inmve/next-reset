@@ -16,6 +16,7 @@
     const today = day(now);
     for (const card of cards) {
       const element = root.querySelector(`[data-provider="${card.id}"]`);
+      if (card.banked) continue;
       if (card.announced) {
         const overdue = card.expectedDate && card.expectedDate < today;
         element.querySelector('.scope').textContent = t(overdue ? 'awaitingScope' : card.expectedDate === today ? 'todayTimeUnknown' : 'expectedTimeUnknown');
