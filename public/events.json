@@ -45,7 +45,8 @@
       "source": "https://x.com/lydiahallie/status/2095967323412930677",
       "evidence": "Original X post opened and read directly in the browser on 2026-09-22.",
       "author": "@lydiahallie",
-      "verification": "original_post_read"
+      "verification": "original_post_read",
+      "scopeLabelKey": "maxPlans"
     }
   ],
   "sourceType": "official_x_announcements",
@@ -62,7 +63,7 @@
     },
     {
       "id": "claude",
-      "name": "Claude Max",
+      "name": "Claude Code",
       "company": "Anthropic",
       "pose": "meditating"
     }

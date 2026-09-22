@@ -45,3 +45,5 @@ Provider cards and links render without JavaScript. JavaScript updates elapsed d
 The central news and browser title follow the date and the recorded events. A pending reset for today reads “Codex limits are likely to reset today”, followed by “Enjoy the ride.” The title includes the viewer's current calendar date, for example `(2026-09-22)`. With no relevant reset news it reads “No resets today”. A confirmed reset today is identified as completed; an old promise is never treated as completion merely because time passed.
 
 The browser-push service from the early prototype is deferred. Initial notifications use GitHub Releases. Releases are published manually for new, source-verified events.
+
+The two cards focus on coding: Codex and Claude Code. The Claude record retains its Max-plan scope; the product label does not broaden the source announcement. Captions sit inside the cards, below each illustration, with one GitHub subscription action below both cards.
