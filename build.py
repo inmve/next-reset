@@ -75,6 +75,28 @@ for provider in data['providers']:
     svg = (ROOT / f'assets/pelicans/pelican-{pelican_design:02}-{pose}.svg').read_text()
     svg = re.sub(r'(<title[^>]*>).*?(</title>)', lambda match:match[1]+escape(t(pose+'Title'))+match[2], svg)
     svg = re.sub(r'(<desc[^>]*>).*?(</desc>)', lambda match:match[1]+escape(t(pose+'Description'))+match[2], svg)
+    readme_illustration = ''
+    if config.get('siteUrl'):
+        root_tag = re.match(r'<svg\b[^>]*>', svg).group()
+        inner_svg = re.sub(r'^<svg\b[^>]*>|</svg>\s*$', '', svg)
+        metadata = ''.join(re.findall(r'<(?:title|desc)\b[^>]*>.*?</(?:title|desc)>', inner_svg))
+        art = re.sub(r'<(?:title|desc)\b[^>]*>.*?</(?:title|desc)>', '', inner_svg)
+        still_art = re.sub(r'<animate(?:Transform|Motion)?\b[^>]*/>', '', art)
+        background = '<rect width="320" height="240" rx="12" fill="#f5f6f0"/>'
+        if announced:
+            motion_style = '<style>.readme-still{display:none}@media(prefers-reduced-motion:reduce){.readme-motion{display:none}.readme-still{display:inline}}</style>'
+            readme_art = motion_style + '<g class="readme-motion">' + art + '</g><g class="readme-still">' + still_art + '</g>'
+        else:
+            readme_art = still_art
+        readme_svg = root_tag + metadata + background + readme_art + '</svg>'
+        readme_svg = '\n'.join(line.rstrip() for line in readme_svg.splitlines()) + '\n'
+        image_path = f'readme/{provider["id"]}.svg'
+        (OUT / 'readme').mkdir(exist_ok=True)
+        (OUT / image_path).write_text(readme_svg)
+        image_version = hashlib.sha256(readme_svg.encode()).hexdigest()[:12]
+        image_url = url(config['siteUrl'].rstrip('/') + '/' + image_path + '?v=' + image_version)
+        caption = escape(t('enjoyTheRide' if announced else 'waitingNote'))
+        readme_illustration = f'\n\n<p><img src="{image_url}" width="180" height="135" alt="{escape(t(pose+"Title"), quote=True)}"><br><em>{caption}</em></p>'
     # Static first paint; only the announced bicycle starts moving after motion preferences are read.
     if announced: svg = svg.replace('repeatCount="indefinite"', 'repeatCount="indefinite" begin="indefinite"')
     svg = re.sub(r'([pmcb]0[1-5])-', rf'\1-{provider["id"]}-', svg)
@@ -87,7 +109,7 @@ for provider in data['providers']:
 <a class="source" href="{source}" target="_blank" rel="noopener noreferrer">{escape(source_text)}</a></div>
 <div class="bird-stage"><div class="bird">{svg}</div></div>{note}</article>''')
     records.append({**provider, 'announced':announced, 'expectedDate':expected, 'confirmedAt':event['announcedAt'], 'source':event['source'], 'scopeLabelKey':event.get('scopeLabelKey'), 'author':event.get('author', provider['company'])})
-    rows.append(f"## {provider['name']} / {provider['company']}\n\n{row_state[0].upper() + row_state[1:]} · [announcement]({event['source']})")
+    rows.append(f"## {provider['name']} / {provider['company']}\n\n{row_state[0].upper() + row_state[1:]} · [announcement]({event['source']})" + readme_illustration)
 today_plans = [record for record in records if record['announced'] and record['expectedDate'] == today]
 dated_plans = sorted((record for record in records if record['announced'] and record['expectedDate'] and record['expectedDate'] > today), key=lambda record:record['expectedDate'])
 undated_plans = [record for record in records if record['announced'] and not record['expectedDate']]
