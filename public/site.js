@@ -20,14 +20,13 @@
       const element = root.querySelector(`[data-provider="${card.id}"]`);
       if (card.announced) {
         const overdue = card.expectedDate && card.expectedDate < today;
-        element.querySelector('[data-status]').textContent = t(overdue ? 'confirmationPending' : card.expectedDate === today ? 'announcedForToday' : 'announced');
-        element.querySelector('.scope').textContent = t(overdue ? 'awaitingScope' : card.expectedDate === today ? 'todayTimeUnknown' : 'timeUnknown');
+        element.querySelector('.scope').textContent = t(overdue ? 'awaitingScope' : card.expectedDate === today ? 'todayTimeUnknown' : 'expectedTimeUnknown');
         if (!overdue) active.push(card);
       } else {
         const age = Math.max(0, Math.floor((now - new Date(card.confirmedAt)) / 86400000));
         const q = Math.min(age / 30, 1);
         element.style.setProperty('--wait', `rgb(${Math.round(196 - 96 * q)},${Math.round(76 - 47 * q)},${Math.round(77 - 35 * q)})`);
-        element.querySelector('.scope').textContent = t('daysSince', {days: age});
+        element.querySelector('.scope').textContent = t('daysSince', {days: age}) + (card.scopeLabelKey ? ' · ' + t(card.scopeLabelKey) : '');
         if (day(new Date(card.confirmedAt)) === today) completedToday.push(card.name);
       }
     }
@@ -47,9 +46,6 @@
       title = t(active.length === 1 ? 'plannedUndated' : 'plannedUndatedPlural', {providers:active.map(card => card.name).join(', ')});
     }
     root.querySelector('h1').textContent = title;
-    const subtitle = root.querySelector('.ride-note');
-    subtitle.hidden = !(active.length || completedToday.length);
-    subtitle.textContent = t('enjoyTheRide');
     document.title = t('statusPageTitle', {status:title, date:today});
     document.querySelector('meta[property="og:title"]').content = document.title;
   }

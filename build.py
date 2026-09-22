@@ -59,7 +59,7 @@ for provider in data['providers']:
     if announced:
         label = t('confirmationPending' if overdue else 'announcedForToday' if expected == today else 'announced')
         shown_date = date_label(expected) if expected else t('dateUnknown')
-        scope = t('awaitingScope' if overdue else 'todayTimeUnknown' if expected == today else 'timeUnknown')
+        scope = t('awaitingScope' if overdue else 'todayTimeUnknown' if expected == today else 'expectedTimeUnknown')
         row_state = f"reset announced for **{expected}**" if expected else 'reset announced · date not specified'
         if overdue: row_state += ' · confirmation pending'
         else: active.append(provider['name'])
@@ -67,7 +67,9 @@ for provider in data['providers']:
         label = t('lastConfirmed')
         shown_date = date_label(event['announcedAt'])
         scope = t('daysSince', days=age)
+        if event.get('scopeLabelKey'): scope += ' · ' + t(event['scopeLabelKey'])
         row_state = f"last confirmed reset **{confirmation.date().isoformat()}**"
+        if event.get('scopeLabelKey'): row_state += ' · ' + t(event['scopeLabelKey'])
     pose = 'cycling' if announced else provider['pose']
     svg = (ROOT / f'assets/pelicans/pelican-{pelican_design:02}-{pose}.svg').read_text()
     svg = re.sub(r'(<title[^>]*>).*?(</title>)', lambda match:match[1]+escape(t(pose+'Title'))+match[2], svg)
@@ -77,14 +79,15 @@ for provider in data['providers']:
     svg = re.sub(r'([pmcb]0[1-5])-', rf'\1-{provider["id"]}-', svg)
     for before, after in {'#263e39':'var(--bird-ink)', '#98b3a0':'var(--bird-sage)', '#d89958':'var(--bird-gold)', '#f3efe2':'var(--bird-cream)'}.items(): svg = svg.replace(before, after)
     source_text = t('sourceAt', date=confirmation.strftime('%b %d, %H:%M'))
-    note = '' if announced else '<p class="waiting-note">' + escape(t('waitingNote')) + '</p>'
+    note = '<p class="pelican-note">' + escape(t('enjoyTheRide' if announced else 'waitingNote')) + '</p>'
+    status = '' if announced else f'<p class="status-label"><span class="status-dot" aria-hidden="true"></span><span>{escape(label)}</span></p>'
     cards.append(f'''<article class="provider {'announced' if announced else 'waiting'}" data-provider="{provider['id']}" style="--wait:{red}">
 <div class="provider-details"><h2 class="provider-name">{escape(provider['name'])}<span>{escape(provider['company'])}</span></h2>
-<p class="status-label"><span class="status-dot" aria-hidden="true"></span><span data-status>{escape(label)}</span></p>
+<div class="status-slot">{status}</div>
 <p class="when">{escape(shown_date)}</p><p class="scope">{escape(scope)}</p>
 <a class="source" href="{source}" target="_blank" rel="noopener noreferrer">{escape(source_text)}</a></div>
-<div class="bird-stage"><div class="bird">{svg}{note}</div></div></article>''')
-    records.append({**provider, 'announced':announced, 'expectedDate':expected, 'confirmedAt':event['announcedAt'], 'source':event['source'], 'author':event.get('author', provider['company'])})
+<div class="bird-stage"><div class="bird">{svg}</div></div>{note}</article>''')
+    records.append({**provider, 'announced':announced, 'expectedDate':expected, 'confirmedAt':event['announcedAt'], 'source':event['source'], 'scopeLabelKey':event.get('scopeLabelKey'), 'author':event.get('author', provider['company'])})
     rows.append(f"**{provider['name']} / {provider['company']}** — {row_state} · [announcement]({event['source']})")
 today_plans = [record for record in records if record['announced'] and record['expectedDate'] == today]
 dated_plans = sorted((record for record in records if record['announced'] and record['expectedDate'] and record['expectedDate'] > today), key=lambda record:record['expectedDate'])
@@ -110,8 +113,6 @@ values.update({
     'pageTitle':escape(t('statusPageTitle', status=heading, date=today)),
     'homeLabel':escape(t('homeLabel', name=config['name'])),
     'heading':'<br>'.join(escape(line) for line in heading.split('|')),
-    'subtitle':escape(t('enjoyTheRide')),
-    'subtitleHidden':'' if active or completed_today else 'hidden',
     'proofText':escape(proof_text), 'proofUrl':url(proof_record['source']) if proof_record else '#providers',
     'proofHidden':'' if proof_record else 'hidden', 'noProofHidden':'hidden' if proof_record else '',
     'actionUrl':url(config['updatesRepository'],True) if config.get('updatesRepository') else '#providers',
