@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240" fill="none" role="img" aria-labelledby="m02-title m02-desc" data-pose="seated">
+  <title id="m02-title">Meditating pelican 2</title>
+  <desc id="m02-desc">A pelican meditates peacefully without a bicycle while waiting for a usage-reset announcement.</desc>
+  <g stroke="#263e39" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M224 35C188 10 126 16 89 48C47 83 40 141 65 182C89 223 151 235 198 216C239 199 266 162 269 122C272 90 262 65 249 51" stroke-width="7" />
+    <path d="M226 37L219 33M246 48L251 53" stroke-width="3" />
+    </g>
+  <path d="M142 91C130 89 125 80 127 71C129 59 143 54 153 60C165 66 162 78 161 87L166 102C177 105 186 115 185 126C196 128 200 136 193 141C181 149 163 142 155 141C145 147 121 148 111 140C104 134 110 126 119 124C121 112 130 105 139 102Z" fill="#263e39" transform="translate(0 23)" />
+  <path d="M161 73L212 84L163 88Z" fill="#c78c61" transform="translate(0 23)" />
+  <path d="M164 91L206 87C197 101 185 107 174 104C168 102 165 97 164 91Z" fill="#c78c61" transform="translate(0 23)" />
+  <path d="M139 74Q144 79 149 74" stroke="#c78c61" stroke-width="3" stroke-linecap="round" transform="translate(0 23)" />
+  <path d="M128 120Q137 133 155 127Q168 135 178 121M137 139L155 127L174 140" stroke="#c78c61" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(0 23)" />
+</svg>

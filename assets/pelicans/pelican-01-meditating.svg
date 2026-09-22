@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240" fill="none" role="img" aria-labelledby="m01-title m01-desc" data-pose="seated">
+  <title id="m01-title">Meditating pelican 1</title>
+  <desc id="m01-desc">A pelican meditates peacefully without a bicycle while waiting for a usage-reset announcement.</desc>
+  <g stroke="#263e39" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" transform="translate(-8 46)">
+    <path d="M157 55c-9 12-25 16-28 34-1 6 0 12 4 18l-20-8 8 15h13" />
+    <path d="M167 58c-7 10-7 17-2 27 5 10 5 16 0 24" />
+    <path d="M157 55c-6-3-9-8-8-14 1-8 7-13 14-13 8 0 14 6 14 14" />
+    <path d="m176 41 54 5-58 9" />
+    <path d="M229 47c-15 18-41 26-57 8" />
+    <path d="M159 41q4 4 8 0" />
+    <path d="M137 84c0 10 6 16 14 18 8-3 11-10 9-17" />
+    <path d="m144 94 7 8 5-8" />
+    <path d="M146 107c-12-7-25-5-25 2 0 9 24 11 40 1 9-5 15-5 17 0 3 8-16 13-38 7" />
+    <path d="m145 107 10 5m-12 4 10-3" />
+  </g>
+<ellipse cx="157" cy="204" rx="46" ry="5" fill="#98b3a0" opacity=".2" /></svg>

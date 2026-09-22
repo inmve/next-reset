@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "snapshotAt": "2026-09-22T07:35:00Z",
+  "coverage": "Selected public reset announcements, manually verified against original sources. Not a live feed.",
+  "repositoryUrl": "https://github.com/inmve/token-resets-site",
+  "events": [
+    {
+      "id": "codex-announcement-2026-09-22",
+      "provider": "codex",
+      "status": "announced",
+      "type": "usage_reset",
+      "announcedAt": "2026-09-22T04:31:32Z",
+      "expectedAt": null,
+      "expectedWording": "Tuesday. The author does not give a specific time or timezone.",
+      "scope": "Not established",
+      "source": "https://x.com/thsottiaux/status/2102254445082116335",
+      "evidence": "Original X post opened and read directly in the browser on 2026-09-22.",
+      "author": "@thsottiaux",
+      "verification": "original_post_read",
+      "expectedDate": "2026-09-22",
+      "expectedPrecision": "day",
+      "expectedTimeZone": null
+    },
+    {
+      "id": "codex-reset-2026-09-12",
+      "provider": "codex",
+      "status": "confirmed_completed",
+      "type": "usage_reset",
+      "announcedAt": "2026-09-12T08:09:17Z",
+      "effectiveAt": null,
+      "scope": "Astra users, as stated in the quoted announcement",
+      "source": "https://x.com/thsottiaux/status/2098685367058612394",
+      "evidence": "Original X post and its quoted announcement opened and read directly in the browser on 2026-09-22.",
+      "author": "@thsottiaux",
+      "verification": "original_post_read"
+    },
+    {
+      "id": "claude-reset-2026-09-04",
+      "provider": "claude",
+      "status": "confirmed_completed",
+      "type": "weekly_usage_reset",
+      "announcedAt": "2026-09-04T20:08:45Z",
+      "effectiveAt": null,
+      "scope": "Claude Max",
+      "source": "https://x.com/lydiahallie/status/2095967323412930677",
+      "evidence": "Original X post opened and read directly in the browser on 2026-09-22.",
+      "author": "@lydiahallie",
+      "verification": "original_post_read"
+    },
+    {
+      "id": "grok-bot-reset-2026-09-05",
+      "provider": "grok",
+      "status": "confirmed_completed",
+      "type": "usage_reset",
+      "announcedAt": "2026-09-05T18:24:39Z",
+      "effectiveAt": null,
+      "scope": "Grok Bot users; not all Grok products",
+      "source": "https://x.com/bot/status/2096303514230423629",
+      "evidence": "Original X post opened and read directly in the browser on 2026-09-22.",
+      "author": "@bot",
+      "verification": "original_post_read"
+    }
+  ],
+  "sourceType": "official_x_announcements",
+  "upstreamDiscovery": [
+    "https://whenreset.dev/"
+  ],
+  "verifiedOn": "2026-09-22",
+  "providers": [
+    {
+      "id": "codex",
+      "name": "Codex",
+      "company": "OpenAI",
+      "pose": "meditating"
+    },
+    {
+      "id": "claude",
+      "name": "Claude Max",
+      "company": "Anthropic",
+      "pose": "meditating"
+    },
+    {
+      "id": "grok",
+      "name": "Grok Bot",
+      "company": "xAI",
+      "pose": "balancing"
+    }
+  ]
+}
