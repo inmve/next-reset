@@ -110,6 +110,8 @@ for provider in data['providers']:
     for before, after in {'#263e39':'var(--bird-ink)', '#98b3a0':'var(--bird-sage)', '#d89958':'var(--bird-gold)', '#f3efe2':'var(--bird-cream)'}.items(): svg = svg.replace(before, after)
     source_text = t('sourceOn', date=date_label(event['announcedAt'])) if event.get('announcementPrecision') == 'day' else t('sourceAt', date=confirmation.strftime('%b %d, %H:%M'))
     note = '<p class="pelican-note">' + escape(t('bankedDate' if banked else 'enjoyTheRide' if riding else 'waitingNote')) + '</p>'
+    if not riding and provider.get('pingHandle'):
+        note = '<p class="pelican-note waiting-note">' + escape(t('waitingNote')) + '</p><div class="ping-request" hidden><p class="ping-days"></p><a class="ping-link" target="_blank" rel="noopener noreferrer">' + escape(t('ping', handle=provider['pingHandle'])) + '</a></div>'
     cards.append(f'''<article class="provider {'announced' if riding else 'waiting'}" data-provider="{provider['id']}" style="--wait:{red}">
 <div class="provider-details"><h2 class="provider-name">{escape(provider['name'])}<span>{escape(provider['company'])}</span></h2>
 <p class="scope">{escape(scope)}</p><p class="when">{escape(shown_date)}</p>

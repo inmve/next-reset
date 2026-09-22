@@ -83,5 +83,16 @@
   "bankedDate": "Use when you choose",
   "bankedDetails": "For subscribers · announced {date}",
   "sourceOn": "Announced {date} ↗",
-  "grokBotOnly": "Grok Bot only"
+  "grokBotOnly": "Grok Bot only",
+  "ping": "Ping @{handle} ↗",
+  "trackedDays": "{days} days since the last tracked reset",
+  "relativeToday": "today",
+  "relativeYesterday": "yesterday",
+  "relativeDays": "{days} days ago",
+  "tweetLead": "Hey @{handle}, {provider}’s last tracked reset was {when}.",
+  "tweetCompleted": "{provider}: limits reset {when}.",
+  "tweetBanked": "{provider}: banked reset announced {when}.",
+  "tweetExpected": "{provider}: reset expected {date} (unconfirmed).",
+  "tweetUndated": "{provider}: reset expected (date unknown).",
+  "tweetAsk": "Any reset coming for {provider}?"
 }

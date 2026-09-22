@@ -88,19 +88,22 @@
       "id": "codex",
       "name": "Codex",
       "company": "OpenAI",
-      "pose": "meditating"
+      "pose": "meditating",
+      "pingHandle": "thsottiaux"
     },
     {
       "id": "claude",
       "name": "Claude Code",
       "company": "Anthropic",
-      "pose": "meditating"
+      "pose": "meditating",
+      "pingHandle": "AnthropicAI"
     },
     {
       "id": "grok",
       "name": "Grok Bot",
       "company": "xAI",
-      "pose": "meditating"
+      "pose": "meditating",
+      "pingHandle": "elonmusk"
     }
   ]
 }
