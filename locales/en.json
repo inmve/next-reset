@@ -73,5 +73,6 @@
   "nextResetTerm": "next reset",
   "madeBy": "Made by {author}",
   "feedback": "Feedback / report a reset",
-  "benefit": "Know when Codex and Claude Code limits reset, so you can use your remaining tokens on something you want to build."
+  "benefit": "Know when Codex and Claude Code limits reset, so you can use your remaining tokens on something you want to build.",
+  "siteTitle": "Is it time for a ride or for meditation?"
 }
