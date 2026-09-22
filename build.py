@@ -116,7 +116,7 @@ for provider in data['providers']:
 <a class="source" href="{source}" target="_blank" rel="noopener noreferrer">{escape(source_text)}</a></div>
 <div class="bird-stage"><div class="bird">{svg}</div></div>{note}</article>''')
     records.append({**provider, 'announced':announced, 'banked':banked, 'expectedDate':expected, 'confirmedAt':event['announcedAt'], 'source':event['source'], 'scopeLabelKey':event.get('scopeLabelKey'), 'author':event.get('author', provider['company'])})
-    if not banked: rows.append(f"## {provider['name']} / {provider['company']}\n\n{row_state[0].upper() + row_state[1:]} · [announcement]({event['source']})" + readme_illustration)
+    if not banked: rows.append(f"## {provider['name']} / {provider['company']}\n\n{row_state[0].upper() + row_state[1:]} · [announcement]({event['source']})")
 today_plans = [record for record in records if record['announced'] and record['expectedDate'] == today]
 dated_plans = sorted((record for record in records if record['announced'] and record['expectedDate'] and record['expectedDate'] > today), key=lambda record:record['expectedDate'])
 undated_plans = [record for record in records if record['announced'] and not record['expectedDate']]
