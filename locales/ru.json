@@ -6,7 +6,7 @@
   "announcedForToday": "Ожидается сегодня",
   "announced": "Ожидается сброс",
   "lastReset": "Последний сброс",
-  "waitingNote": "Трать токены с умом. Без спешки.",
+  "waitingNote": "Не торопись.",
   "pauseCycling": "Остановить велосипед",
   "resumeCycling": "Продолжить поездку",
   "footerNote": "Без спешки. Без плана по токенам.",
@@ -37,12 +37,12 @@
   "watchHelp": "Watch → Custom → Releases",
   "sourceCode": "Код и данные",
   "snapshotLabel": "Данные проверены {date} UTC",
-  "sourceAt": "Опубликовано {date} UTC ↗",
+  "sourceAt": "Объявлено {date} UTC ↗",
   "timeUnknown": "Время не указано",
   "dateUnknown": "Дата не объявлена",
   "confirmationPending": "Ждём подтверждения",
   "lastConfirmed": "Последний подтверждённый сброс",
-  "daysSince": "{days} полных дней с подтверждения",
+  "daysSince": "{days} дней с обновления",
   "scopeUnknown": "Тарифы не указаны",
   "quietTitle": "Спешить некуда.",
   "awaitingScope": "Объявленная дата прошла · ждём подтверждения",
@@ -69,5 +69,8 @@
   "nextResetQuestion": "Когда следующий сброс?",
   "shellTitle": "cd token-usage/limits; reset",
   "expectedTimeUnknown": "Ожидается сброс · время не указано",
-  "maxPlans": "Тарифы Max"
+  "maxPlans": "Тарифы Max",
+  "nextResetTerm": "следующий сброс",
+  "madeBy": "Автор: {author}",
+  "feedback": "Обратная связь / сообщить о сбросе"
 }

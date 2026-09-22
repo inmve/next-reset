@@ -26,7 +26,7 @@
         const age = Math.max(0, Math.floor((now - new Date(card.confirmedAt)) / 86400000));
         const q = Math.min(age / 30, 1);
         element.style.setProperty('--wait', `rgb(${Math.round(196 - 96 * q)},${Math.round(76 - 47 * q)},${Math.round(77 - 35 * q)})`);
-        element.querySelector('.scope').textContent = t('daysSince', {days: age}) + (card.scopeLabelKey ? ' · ' + t(card.scopeLabelKey) : '');
+        element.querySelector('.scope').textContent = t('daysSince', {days: age}) + (card.scopeLabelKey ? ' | ' + t(card.scopeLabelKey) : '');
         if (day(new Date(card.confirmedAt)) === today) completedToday.push(card.name);
       }
     }

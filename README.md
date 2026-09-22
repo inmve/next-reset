@@ -1,4 +1,4 @@
-# Token Resets
+# Next Reset
 
 A quiet page for public AI usage-limit reset announcements. The separate notification repository contains only its minimal README. This repository contains the website and its source data.
 
@@ -21,7 +21,7 @@ The included GitHub Pages workflow checks and builds pull requests, and deploys 
 python3 build.py --release
 ```
 
-This refuses to build a release while an address is missing. Notifications live in [`token-resets`](https://github.com/inmve/token-resets); this website is published at [inmve.github.io/token-resets-site](https://inmve.github.io/token-resets-site/).
+This refuses to build a release while an address is missing. Notifications live in [`token-limit-resets`](https://github.com/inmve/token-limit-resets); this website is published at [inmve.github.io/next-reset](https://inmve.github.io/next-reset/).
 
 ## Updating records
 

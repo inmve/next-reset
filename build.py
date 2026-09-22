@@ -68,7 +68,7 @@ for provider in data['providers']:
         label = t('lastConfirmed')
         shown_date = date_label(event['announcedAt'])
         scope = t('daysSince', days=age)
-        if event.get('scopeLabelKey'): scope += ' · ' + t(event['scopeLabelKey'])
+        if event.get('scopeLabelKey'): scope += ' | ' + t(event['scopeLabelKey'])
         row_state = f"last confirmed reset **{confirmation.date().isoformat()}**"
         if event.get('scopeLabelKey'): row_state += ' · ' + t(event['scopeLabelKey'])
     pose = 'cycling' if announced else provider['pose']
@@ -81,11 +81,9 @@ for provider in data['providers']:
     for before, after in {'#263e39':'var(--bird-ink)', '#98b3a0':'var(--bird-sage)', '#d89958':'var(--bird-gold)', '#f3efe2':'var(--bird-cream)'}.items(): svg = svg.replace(before, after)
     source_text = t('sourceAt', date=confirmation.strftime('%b %d, %H:%M'))
     note = '<p class="pelican-note">' + escape(t('enjoyTheRide' if announced else 'waitingNote')) + '</p>'
-    status = '' if announced else f'<p class="status-label"><span class="status-dot" aria-hidden="true"></span><span>{escape(label)}</span></p>'
     cards.append(f'''<article class="provider {'announced' if announced else 'waiting'}" data-provider="{provider['id']}" style="--wait:{red}">
 <div class="provider-details"><h2 class="provider-name">{escape(provider['name'])}<span>{escape(provider['company'])}</span></h2>
-<div class="status-slot">{status}</div>
-<p class="when">{escape(shown_date)}</p><p class="scope">{escape(scope)}</p>
+<p class="scope">{escape(scope)}</p><p class="when">{escape(shown_date)}</p>
 <a class="source" href="{source}" target="_blank" rel="noopener noreferrer">{escape(source_text)}</a></div>
 <div class="bird-stage"><div class="bird">{svg}</div></div>{note}</article>''')
     records.append({**provider, 'announced':announced, 'expectedDate':expected, 'confirmedAt':event['announcedAt'], 'source':event['source'], 'scopeLabelKey':event.get('scopeLabelKey'), 'author':event.get('author', provider['company'])})
@@ -110,6 +108,7 @@ proof_record = (today_plans or [record for record in records if record['name'] i
 proof_text = t('basedOnPost', author=proof_record['author'], date=timestamp(proof_record['confirmedAt']).strftime('%b %d, %H:%M')) if proof_record else ''
 values = {key:escape(value) for key,value in strings.items()}
 values.update({
+    'nextResetQuestion':escape(t('nextResetQuestion')).replace(escape(t('nextResetTerm')), '<mark>'+escape(t('nextResetTerm'))+'</mark>'),
     'lang':config['locale'], 'design':str(design), 'brand':escape(config['name']),
     'styleVersion':hashlib.sha256((ROOT/'src/style.css').read_bytes()).hexdigest()[:12],
     'scriptVersion':hashlib.sha256((ROOT/'src/site.js').read_bytes()).hexdigest()[:12],
@@ -125,7 +124,7 @@ values.update({
     'state':json.dumps({'strings':strings,'cards':records,'config':config},ensure_ascii=False).replace('<','\\u003c')
 })
 if config.get('sourceRepository'):
-    values['sourceLink'] = f'<a href="{url(config["sourceRepository"],True)}">{escape(t("sourceCode"))}</a>'
+    values['sourceLink'] = f'<a href="{url(config["authorUrl"])}">{escape(t("madeBy", author=config["authorName"]))}</a><a href="{url(config["sourceRepository"].rstrip("/")+"/issues")}">{escape(t("feedback"))}</a>'
 if config.get('siteUrl'):
     values['canonical'] = f'<link rel="canonical" href="{url(config["siteUrl"])}"><meta property="og:url" content="{url(config["siteUrl"])}">'
 page = re.sub(r'\{\{(\w+)\}\}', lambda match:values[match[1]], (ROOT/'src/page.html').read_text())
@@ -135,6 +134,6 @@ shutil.copy(ROOT/'data/events.json', OUT/'events.json')
 (OUT/'favicon.svg').write_text('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><rect width="40" height="40" rx="12" fill="#f6e8da"/><path d="M31 15A13 13 0 1 0 32 24" fill="none" stroke="#344a3c" stroke-width="3" stroke-linecap="round"/></svg>')
 readme_title = (', '.join(active) + (' reset is upcoming' if len(active)==1 else ' resets are upcoming')) if active else 'No need to rush'
 site_link = f"Less minimalistic version — [{config['name']}]({config['siteUrl']})." if config.get('siteUrl') else 'Less minimalistic version — site link coming soon.'
-readme = '# ' + readme_title + '\n\n' + ('\\' + '\n').join(rows) + '\n\nTo get reset notifications via GitHub: **Watch → Custom → Releases**\n\n' + site_link + '\n'
+readme = '# ' + readme_title + '\n\n' + ('\\' + '\n').join(rows) + '\n\nStar to save this repo. For reset notifications: **Watch → Custom → Releases**.\n\n' + site_link + '\n'
 (ROOT/'minimal-README.md').write_text(readme)
 print('Built public/index.html and minimal-README.md. ' + ('Addresses pending: '+', '.join(missing) if missing else 'All public addresses configured.'))
