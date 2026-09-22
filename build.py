@@ -134,7 +134,7 @@ values.update({
     'lang':config['locale'], 'design':str(design), 'brand':escape(config['name']),
     'styleVersion':hashlib.sha256((ROOT/'src/style.css').read_bytes()).hexdigest()[:12],
     'scriptVersion':hashlib.sha256((ROOT/'src/site.js').read_bytes()).hexdigest()[:12],
-    'pageTitle':escape(t('statusPageTitle', status=heading, date=today)),
+    'pageTitle':escape(t('statusPageTitle', status=t('siteTitle'), date=today)),
     'homeLabel':escape(t('homeLabel', name=config['name'])),
     'heading':'<br>'.join(escape(line) for line in heading.split('|')),
     'proofText':escape(proof_text), 'proofUrl':url(proof_record['source']) if proof_record else '#providers',
