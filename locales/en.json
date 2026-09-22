@@ -63,7 +63,7 @@
   "noResetsToday": "No resets today",
   "enjoyTheRide": "Enjoy the ride.",
   "statusPageTitle": "{status} ({date})",
-  "mechanism": "Public reset updates for Codex, Claude Max and Grok Bot, with original sources.",
+  "mechanism": "Public reset updates for Codex and Claude Max, with original sources.",
   "basedOnPost": "Based on a post by {author} · {date} UTC ↗",
   "seeUpdates": "See reset updates",
   "nextResetQuestion": "When is the next reset?"

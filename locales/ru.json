@@ -63,7 +63,7 @@
   "noResetsToday": "Сегодня без сбросов",
   "enjoyTheRide": "Приятной поездки.",
   "statusPageTitle": "{status} ({date})",
-  "mechanism": "Публичные обновления о сбросах Codex, Claude Max и Grok Bot со ссылками на первоисточники.",
+  "mechanism": "Публичные обновления о сбросах Codex и Claude Max со ссылками на первоисточники.",
   "basedOnPost": "По публикации {author} · {date} UTC ↗",
   "seeUpdates": "Посмотреть обновления",
   "nextResetQuestion": "Когда следующий сброс?"
