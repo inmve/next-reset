@@ -4,6 +4,7 @@ A parking lot for ideas from project conversations. These are possibilities, not
 
 ## Product ideas
 
+- [ ] **Per-tool reset repositories.** Keep reset records and release notifications in a separate repository for each tool—Codex, Claude Code, and others as they qualify—so people can watch only the tools they use. Keep Next Reset as the combined overview. Decide how each repository links back to the overview and shares verified history before splitting the current notification repository.
 - [ ] **Reset history and cadence.** Once there are enough source-verified events, show how often each provider has reset limits and the time since the last confirmed event. Avoid implying a schedule or predicting a date from sparse data.
 - [ ] **Pelican states.** Explore a happy pelican after a completed reset, a calm pelican with a reset ticket for a banked reset, and gently escalating worry when a provider has gone a long time without a confirmed update. Keep the tone calm and make the illustration reflect the event state.
 - [ ] **Banked-reset lifecycle.** Distinguish a reset that is announced, still being distributed, available in an account, or redeemed when the source supports those details. Show plan eligibility and timing without guessing.
