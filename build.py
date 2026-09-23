@@ -62,7 +62,7 @@ for provider in data['providers']:
     if banked:
         label = t('bankedReset')
         shown_date = t('bankedReset')
-        scope = t('bankedDetails', date=date_label(event['announcedAt']))
+        scope = t(event.get('scopeLabelKey', 'bankedDetails'), date=date_label(event['announcedAt']))
         row_state = 'banked reset available · use when you choose'
     elif announced:
         label = t('confirmationPending' if overdue else 'announcedForToday' if expected == today else 'announced')
@@ -79,7 +79,8 @@ for provider in data['providers']:
         row_state = f"last confirmed reset **{confirmation.date().isoformat()}**"
         if event.get('scopeLabelKey'): row_state += ' · ' + t(event['scopeLabelKey'])
     pose = 'cycling' if riding else provider['pose']
-    svg = (ROOT / f'assets/pelicans/pelican-{pelican_design:02}-{pose}.svg').read_text()
+    illustration_design = provider.get('cyclingDesign', pelican_design) if riding else pelican_design
+    svg = (ROOT / f'assets/pelicans/pelican-{illustration_design:02}-{pose}.svg').read_text()
     svg = re.sub(r'(<title[^>]*>).*?(</title>)', lambda match:match[1]+escape(t(pose+'Title'))+match[2], svg)
     svg = re.sub(r'(<desc[^>]*>).*?(</desc>)', lambda match:match[1]+escape(t(pose+'Description'))+match[2], svg)
     readme_illustration = ''
