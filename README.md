@@ -2,6 +2,8 @@
 
 A quiet page for public AI usage-limit reset announcements. The separate notification repository contains only its minimal README. This repository contains the website and its source data.
 
+Ideas for future work are collected in the [backlog](backlog.md).
+
 ## Build
 
 Requires Python 3. No packages, account, API keys or build service are needed.
