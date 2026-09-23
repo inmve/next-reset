@@ -94,5 +94,6 @@
   "tweetBanked": "{provider}: banked reset announced {when}.",
   "tweetExpected": "{provider}: reset expected {date} (unconfirmed).",
   "tweetUndated": "{provider}: reset expected (date unknown).",
-  "tweetAsk": "Any reset coming for {provider}?"
+  "tweetAsk": "Any reset coming for {provider}?",
+  "codexBankedDetails": "For Plus, Pro & Business users · announced {date}"
 }

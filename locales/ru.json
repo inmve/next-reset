@@ -94,5 +94,6 @@
   "tweetBanked": "{provider}: сохранённый сброс объявлен {when}.",
   "tweetExpected": "{provider}: сброс ожидается {date} (не подтверждён).",
   "tweetUndated": "{provider}: ожидается сброс, дата неизвестна.",
-  "tweetAsk": "Планируется ли сброс для {provider}?"
+  "tweetAsk": "Планируется ли сброс для {provider}?",
+  "codexBankedDetails": "Для пользователей Plus, Pro и Business · объявлено {date}"
 }

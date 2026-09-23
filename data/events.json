@@ -1,9 +1,24 @@
 {
   "schemaVersion": 1,
-  "snapshotAt": "2026-09-22T17:00:27.201459+00:00",
+  "snapshotAt": "2026-09-23T06:47:43+00:00",
   "coverage": "Selected public reset announcements, manually verified against original sources. Not a live feed.",
   "repositoryUrl": "https://github.com/inmve/next-reset",
   "events": [
+    {
+      "id": "codex-banked-reset-2026-09-22",
+      "provider": "codex",
+      "status": "banked_available",
+      "type": "banked_usage_reset",
+      "announcedAt": "2026-09-22T18:23:37Z",
+      "announcementPrecision": "minute",
+      "scope": "Plus, Pro and Business users",
+      "scopeLabelKey": "codexBankedDetails",
+      "source": "https://x.com/thsottiaux/status/2102463847714247142",
+      "announcementUrl": "https://x.com/thsottiaux/status/2102463847714247142",
+      "evidence": "Tibo announced that OpenAI was loading a banked reset into all Plus, Pro and Business accounts alongside the GPT-6 Sol and Luna launch. The OpenAI Community launch announcement repeats this scope. Read 2026-09-23.",
+      "author": "@thsottiaux",
+      "verification": "original_post_read"
+    },
     {
       "id": "claude-banked-reset-2026-09-22",
       "provider": "claude",
@@ -89,7 +104,8 @@
       "name": "Codex",
       "company": "OpenAI",
       "pose": "meditating",
-      "pingHandle": "thsottiaux"
+      "pingHandle": "thsottiaux",
+      "cyclingDesign": 4
     },
     {
       "id": "claude",
