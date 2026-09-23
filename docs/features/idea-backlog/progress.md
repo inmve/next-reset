@@ -1,38 +1,39 @@
-# Project idea backlog
+# Per-tool reset repositories backlog item
 
 ## Current Status
-Last Updated: 2026-09-23T08:30:00Z
-Status: Ready for Review
-Completion: 90%
+Last Updated: 2026-09-23T08:34:00Z
+Status: In Progress
+Completion: 75%
 
 ## Original request
-«слушай давай создадим backlog.md или plan.md куда будем скидывать идейки».
+«первая идейка - разьединить на три репозитория и в каждом хранить только по определенным резетам; для клода, для кодекса, и так далее; что б юзеры могли подписываться через вотч только на тот тулз которым они ползуются».
 
 ## Decisions
-- Create a root-level `backlog.md` because this is an informal parking lot, not an approved execution plan.
-- Keep ideas grouped by product work, source-dependent provider research, and lower-priority follow-ups.
-- Carry over unresolved ideas discussed in chat: reset history/cadence, pelican states, banked-reset lifecycle, GitHub release cadence, Cursor/Antigravity research, optional browser notifications, and search wording.
-- Preserve the user's constraint that provider coverage needs clear primary sources and explicit approval before adding providers.
-- Link the backlog from README so it is easy to find.
+- Add this as the first backlog item, not as an implementation request.
+- Describe one notification/data repository per eligible tool, including Codex and Claude Code, so GitHub Watch can be scoped to what each user uses.
+- Keep Next Reset as the combined overview.
+- Record repository linkage and history ownership as unresolved design questions before any split.
 
 ## Timeline
-- 2026-09-23: Fetched latest `origin/main` before creating `feature/idea-backlog`.
-- 2026-09-23: Added the backlog and README link.
+- 2026-09-23: Fetched latest `origin/main`, then created `feature/per-tool-reset-repos` from it.
+- 2026-09-23: Added the per-tool repository idea as the first item in `backlog.md`.
+
+## Decisions/Impact
+- `backlog.md` now leads with the user's idea; no repositories or notification flows are being split in this task.
 
 ## Challenges & Solutions
-- Challenge: Several old ideas had since been superseded or implemented. Solution: included only unresolved ideas and framed browser notifications as conditional on user need.
+- None encountered.
 
 ## Files Modified
-- `backlog.md` — project idea parking lot.
-- `README.md` — entry point to the backlog.
+- `backlog.md` — added the per-tool reset repository idea at the top of Product ideas.
+- `docs/features/idea-backlog/progress.md` — updated handoff context for this follow-up.
 
 ## Current Context
-- What's working: ideas are collected with explicit separation between future research and lower-priority possibilities.
-- What's not working: none known.
-- What's next: commit the documentation-only change, open a PR, and merge after review checks.
+- What's working: the idea is captured with intended user value and overview behavior.
+- What's not working: none.
+- What's next: review, open and merge a docs-only PR.
 
 ## Next Steps
-- [x] Fetch main and create a feature branch from it.
-- [x] Add the backlog and README link.
-- [ ] Review the diff and open a PR.
-- [ ] Merge the PR.
+- [x] Fetch main and create a feature branch.
+- [x] Add the idea.
+- [ ] Open PR and merge.
