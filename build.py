@@ -183,11 +183,11 @@ for provider in data['providers']:
     if riding: svg = svg.replace('repeatCount="indefinite"', 'repeatCount="indefinite" begin="indefinite"')
     svg = re.sub(r'([pmcb]0[1-5])-', rf'\1-{provider["id"]}-', svg)
     for before, after in {'#263e39':'var(--bird-ink)', '#98b3a0':'var(--bird-sage)', '#d89958':'var(--bird-gold)', '#f3efe2':'var(--bird-cream)'}.items(): svg = svg.replace(before, after)
-    source_text = t('sourceOn', date=date_label(event['announcedAt'])) if event.get('announcementPrecision') == 'day' else t('sourceAt', date=confirmation.strftime('%b %d, %H:%M'))
+    source_text = t('sourceAvailableOn' if banked else 'sourceOn' if announced else 'sourceConfirmedOn', date=date_label(event['announcedAt'])) if event.get('announcementPrecision') == 'day' else t('sourceAt', date=confirmation.strftime('%b %d, %H:%M'))
     note = '<p class="pelican-note">' + escape(t('bankedDate' if banked else 'enjoyTheRide' if riding else 'waitingNote')) + '</p>'
     if not riding and provider.get('pingHandle'):
         note = '<p class="pelican-note waiting-note">' + escape(t('waitingNote')) + '</p><div class="ping-request" hidden><p class="ping-days"></p><a class="ping-link" target="_blank" rel="noopener noreferrer">' + escape(t('ping', handle=provider['pingHandle'])) + '</a></div>'
-    status_text = t('feedAnnounced' if announced else 'feedNoPending')
+    status_text = t('feedAnnounced' if announced else 'bankedReset' if banked else 'lastConfirmed')
     details = t('feedPendingDetails') if announced else t('feedBankedDetails', date=date_label(event['announcedAt'])) if banked else t('feedCompletedDetails', date=date_label(event['announcedAt']))
     if announced:
         details += ' ' + (t('feedExpectedDate', date=expected) if expected else t('dateUnknown') + '.')

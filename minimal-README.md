@@ -15,7 +15,7 @@ For reset notifications: **Watch → Custom → Releases**.
 
 ### Codex / OpenAI
 
-**No newer reset announcement is recorded**
+**Last confirmed reset**
 
 Last recorded reset confirmation: September 26.
 
@@ -25,9 +25,9 @@ Last recorded reset confirmation: September 26.
 
 ### Claude Code / Anthropic
 
-**No newer reset announcement is recorded**
+**Banked reset available**
 
-Banked reset announced September 22. Check your account for availability and eligibility.
+A banked reset is available as of September 22. Check your account for eligibility.
 
 > We’re also providing subscription users a rate limit reset, which you can now save and use whenever you choose.
 

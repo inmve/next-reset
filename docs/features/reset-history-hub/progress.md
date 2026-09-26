@@ -39,3 +39,5 @@ build.py, data/events.json/schema.json, site.config.json, src/page.html/site.js/
 - [ ] Publish one genuine Codex confirmation release and verify. No historical release burst.
 
 - 2026-09-26T18:34:24.175295+00:00: froze source dataset at SHA-256 d57cdebf08f6f8c14d25af5d01cb9db570f6059df258f56321dbb636bcf19e4b; build and all 5 Python + 2 JS interaction tests pass. Site and provider exports reconcile to four events. Fixed test fixture that targeted older Codex event.
+
+- 2026-09-26T18:37:10.277263+00:00: visual preview revealed stale Grok description and “Announced” label on a confirmed post; corrected EN/RU strings and phase-specific source labels. Rechecked five Python and two JS tests, build, JS syntax and whitespace.
