@@ -24,6 +24,8 @@ jobs:
           python-version: '3.13'
       - name: Check JavaScript syntax
         run: node --check src/site.js
+      - name: Check generated status and notification feeds
+        run: python3 -m unittest discover -s tests
       - name: Build the release
         run: python3 build.py --release
       - name: Package the website

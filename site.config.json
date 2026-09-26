@@ -7,5 +7,10 @@
   "updatesRepository": "https://github.com/inmve/free-ai-coding",
   "sourceRepository": "https://github.com/inmve/next-reset",
   "authorName": "@inmve",
-  "authorUrl": "https://github.com/inmve"
+  "authorUrl": "https://github.com/inmve",
+  "providerRepositories": {
+    "codex": "https://github.com/inmve/codex-reset-alerts",
+    "claude": "https://github.com/inmve/claude-reset-alerts",
+    "grok": "https://github.com/inmve/grok-reset-alerts"
+  }
 }
