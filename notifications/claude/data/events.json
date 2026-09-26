@@ -1,0 +1,239 @@
+{
+  "schemaVersion": 2,
+  "period": {
+    "from": "2026-01-01",
+    "through": "2026-09-26"
+  },
+  "researchedAt": "2026-09-26T18:28:04Z",
+  "coverage": {
+    "status": "partial",
+    "limitations": [
+      "Only two directly read Anthropic official pages currently support the two Claude events.",
+      "Most monthly/provider candidates are unresolved; January and February require more direct official-source searching.",
+      "Aggregator dates and excerpts were used only to build candidate leads and are not event evidence.",
+      "A Chrome browser can read some public X originals; direct source access is not uniformly available and most candidate posts remain unresolved. Coverage is partial, not exhaustive."
+    ]
+  },
+  "events": [
+    {
+      "id": "claude-banked-reset-grant-2026-09-22",
+      "provider": "claude",
+      "products": [
+        "Claude"
+      ],
+      "type": "banked_reset_grant",
+      "status": "available",
+      "scope": {
+        "plans": null,
+        "limitWindows": null,
+        "models": null,
+        "description": "Subscription users; source does not specify eligible subscription plans or exact limit window. The reset can be saved and used later.",
+        "sources": [
+          {
+            "url": "https://www.anthropic.com/claude-opus-5-5",
+            "author": "Anthropic",
+            "quote": "We’re also providing subscription users a rate limit reset, which you can now save and use whenever you choose.",
+            "publishedAt": {
+              "value": "2026-09-22",
+              "precision": "day",
+              "timezone": null
+            },
+            "accessedAt": "2026-09-26T18:11:08Z",
+            "verification": "original_read",
+            "evidenceNote": "Official Anthropic launch page directly read; says subscription users can save and later use a rate-limit reset. Page date is Sep 22; exact credit posting time, plans, and expiry are not stated."
+          }
+        ]
+      },
+      "announcedAt": null,
+      "expectedAt": null,
+      "occurredAt": null,
+      "confirmedAt": {
+        "value": "2026-09-22",
+        "precision": "day",
+        "timezone": null,
+        "sources": [
+          {
+            "url": "https://www.anthropic.com/claude-opus-5-5",
+            "author": "Anthropic",
+            "quote": "We’re also providing subscription users a rate limit reset, which you can now save and use whenever you choose.",
+            "publishedAt": {
+              "value": "2026-09-22",
+              "precision": "day",
+              "timezone": null
+            },
+            "accessedAt": "2026-09-26T18:11:08Z",
+            "verification": "original_read",
+            "evidenceNote": "Official Anthropic launch page directly read; says subscription users can save and later use a rate-limit reset. Page date is Sep 22; exact credit posting time, plans, and expiry are not stated."
+          }
+        ]
+      },
+      "availableAt": {
+        "value": "2026-09-22",
+        "precision": "day",
+        "timezone": null,
+        "sources": [
+          {
+            "url": "https://www.anthropic.com/claude-opus-5-5",
+            "author": "Anthropic",
+            "quote": "We’re also providing subscription users a rate limit reset, which you can now save and use whenever you choose.",
+            "publishedAt": {
+              "value": "2026-09-22",
+              "precision": "day",
+              "timezone": null
+            },
+            "accessedAt": "2026-09-26T18:11:08Z",
+            "verification": "original_read",
+            "evidenceNote": "Official Anthropic launch page directly read; says subscription users can save and later use a rate-limit reset. Page date is Sep 22; exact credit posting time, plans, and expiry are not stated."
+          }
+        ]
+      },
+      "updates": [
+        {
+          "kind": "availability",
+          "reportedAt": {
+            "value": "2026-09-22",
+            "precision": "day",
+            "timezone": null,
+            "sources": [
+              {
+                "url": "https://www.anthropic.com/claude-opus-5-5",
+                "author": "Anthropic",
+                "quote": "We’re also providing subscription users a rate limit reset, which you can now save and use whenever you choose.",
+                "publishedAt": {
+                  "value": "2026-09-22",
+                  "precision": "day",
+                  "timezone": null
+                },
+                "accessedAt": "2026-09-26T18:11:08Z",
+                "verification": "original_read",
+                "evidenceNote": "Official Anthropic launch page directly read; says subscription users can save and later use a rate-limit reset. Page date is Sep 22; exact credit posting time, plans, and expiry are not stated."
+              }
+            ]
+          },
+          "expectedAt": null,
+          "description": "Anthropic says a reset is available to subscription users to save and redeem at their discretion.",
+          "sources": [
+            {
+              "url": "https://www.anthropic.com/claude-opus-5-5",
+              "author": "Anthropic",
+              "quote": "We’re also providing subscription users a rate limit reset, which you can now save and use whenever you choose.",
+              "publishedAt": {
+                "value": "2026-09-22",
+                "precision": "day",
+                "timezone": null
+              },
+              "accessedAt": "2026-09-26T18:11:08Z",
+              "verification": "original_read",
+              "evidenceNote": "Official Anthropic launch page directly read; says subscription users can save and later use a rate-limit reset. Page date is Sep 22; exact credit posting time, plans, and expiry are not stated."
+            }
+          ]
+        }
+      ],
+      "notes": "Date-only availability follows the page date. The actual time accounts received the grant is not stated; grant availability is distinct from user redemption."
+    },
+    {
+      "id": "claude-subscriber-reset-2026-04-23",
+      "provider": "claude",
+      "products": [
+        "Claude Code"
+      ],
+      "type": "automatic_usage_reset",
+      "status": "confirmed",
+      "scope": {
+        "plans": null,
+        "limitWindows": null,
+        "models": null,
+        "description": "The article focuses on Claude Code quality reports and says usage limits are being reset for all subscribers; exact eligible products and plans are not enumerated.",
+        "sources": [
+          {
+            "url": "https://www.anthropic.com/engineering/april-23-postmortem",
+            "author": "Anthropic",
+            "quote": "As of April 23, we’re resetting usage limits for all subscribers.",
+            "publishedAt": {
+              "value": "2026-04-23",
+              "precision": "day",
+              "timezone": null
+            },
+            "accessedAt": "2026-09-26T18:11:08Z",
+            "verification": "original_read",
+            "evidenceNote": "Official Anthropic postmortem directly read; confirms subscriber usage limits were being reset as of Apr 23. It does not state the exact reset instant or enumerate plans."
+          }
+        ]
+      },
+      "announcedAt": null,
+      "expectedAt": null,
+      "occurredAt": null,
+      "confirmedAt": {
+        "value": "2026-04-23",
+        "precision": "day",
+        "timezone": null,
+        "sources": [
+          {
+            "url": "https://www.anthropic.com/engineering/april-23-postmortem",
+            "author": "Anthropic",
+            "quote": "As of April 23, we’re resetting usage limits for all subscribers.",
+            "publishedAt": {
+              "value": "2026-04-23",
+              "precision": "day",
+              "timezone": null
+            },
+            "accessedAt": "2026-09-26T18:11:08Z",
+            "verification": "original_read",
+            "evidenceNote": "Official Anthropic postmortem directly read; confirms subscriber usage limits were being reset as of Apr 23. It does not state the exact reset instant or enumerate plans."
+          }
+        ]
+      },
+      "availableAt": null,
+      "updates": [
+        {
+          "kind": "confirmation",
+          "reportedAt": {
+            "value": "2026-04-23",
+            "precision": "day",
+            "timezone": null,
+            "sources": [
+              {
+                "url": "https://www.anthropic.com/engineering/april-23-postmortem",
+                "author": "Anthropic",
+                "quote": "As of April 23, we’re resetting usage limits for all subscribers.",
+                "publishedAt": {
+                  "value": "2026-04-23",
+                  "precision": "day",
+                  "timezone": null
+                },
+                "accessedAt": "2026-09-26T18:11:08Z",
+                "verification": "original_read",
+                "evidenceNote": "Official Anthropic postmortem directly read; confirms subscriber usage limits were being reset as of Apr 23. It does not state the exact reset instant or enumerate plans."
+              }
+            ]
+          },
+          "expectedAt": null,
+          "description": "Anthropic states that subscriber usage limits are being reset as of this date.",
+          "sources": [
+            {
+              "url": "https://www.anthropic.com/engineering/april-23-postmortem",
+              "author": "Anthropic",
+              "quote": "As of April 23, we’re resetting usage limits for all subscribers.",
+              "publishedAt": {
+                "value": "2026-04-23",
+                "precision": "day",
+                "timezone": null
+              },
+              "accessedAt": "2026-09-26T18:11:08Z",
+              "verification": "original_read",
+              "evidenceNote": "Official Anthropic postmortem directly read; confirms subscriber usage limits were being reset as of Apr 23. It does not state the exact reset instant or enumerate plans."
+            }
+          ]
+        }
+      ],
+      "notes": "The source establishes a date of confirmation, not a distinct exact occurrence time. No announcement-to-reset delay can be calculated."
+    }
+  ],
+  "provider": {
+    "id": "claude",
+    "name": "Claude Code",
+    "company": "Anthropic",
+    "pose": "meditating",
+    "pingHandle": "AnthropicAI"
+  }
+}

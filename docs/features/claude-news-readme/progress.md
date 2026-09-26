@@ -1,13 +1,13 @@
 # Claude news README and source quotes
 
 ## Current Status
-Last Updated: 2026-09-26T16:45:13.036178+00:00
+Last Updated: 2026-09-26T16:50:08.720485+00:00
 Status: Ready for Review
-Completion: 90%
+Completion: 100%
 
 ## Current Context
 Claude and Codex share approved minimal news layout. Claude exact quote obtained from official Anthropic announcement; website renderer already shows available quotes and per-tool GitHub links. Claude quote added to event data, source changed to the official page where quoted text appears; original X announcementUrl retained. Codex why sentence updated per prior request.
-Pending: tests/build, publication. GitHub HTTPS currently failing. Fresh main pull attempted twice before editing; cached main used, prior already-published minimalist commit cherry-picked to restore current known baseline. Fetch/rebase before PR when network recovers. No user work lost.
+Completed: GitHub recovered. Pulled fresh main and rebased source/Claude branches; duplicate already-published commit skipped. Source PR27, Claude PR3 and Codex PR6 merged. Pages run36256759753 succeeded. Live README bytes matched generated output; live site cards verified for quotes and per-tool links. No remaining work.
 
 ## Original requests
 - «use your remaining tokens before the reset. что-то типа -> get an alwert to use»
@@ -29,8 +29,10 @@ build.py; locales/en.json and ru.json; data/events.json; tests/test_build.py; ge
 
 ## Next Steps
 - [x] Run tests, build, syntax/whitespace checks.
-- [ ] Copy generated Claude/Codex README files to feed repositories.
-- [ ] Fetch/rebase onto fresh main, create/attach/merge PRs.
-- [ ] Verify live site and feed README files.
+- [x] Copy generated Claude/Codex README files to feed repositories.
+- [x] Fetch/rebase onto fresh main, create/attach/merge PRs.
+- [x] Verify live site and feed README files.
 
 2026-09-26T16:46:43.472842+00:00: all six tests passed, release build and JS syntax/whitespace checks passed. GitHub API recovered after SSL failures; refresh main and rebase before publication.
+
+- 2026-09-26T16:50:08.720485+00:00: all publication/readback checks passed. Claude rebase conflict came from the older Releases-first README; inspected main and resolved with approved generated copy. No new event release created for copy/source enrichment. Completion notes local on merged branch.

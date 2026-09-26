@@ -60,3 +60,15 @@
 #reset-zen .source-quote figcaption{margin-top:12px;font:10px/1.6 var(--mono);color:var(--muted)}
 #reset-zen .announcement-note{font-size:12px;line-height:1.7;color:var(--muted);margin:14px 0 20px}
 #reset-zen .provider-subscription{margin-top:auto;padding-top:4px}
+
+#reset-zen button.brand{appearance:none;border:0;padding:0;background:none;color:inherit;text-align:left;cursor:pointer;min-height:44px}
+#reset-zen button.brand:focus-visible{outline:2px solid currentColor;outline-offset:6px;border-radius:2px}
+#reset-zen button.brand:disabled{cursor:default}
+#reset-zen .recent-history{margin:56px auto 0;max-width:760px}
+#reset-zen .recent-history h2{font-size:22px;font-weight:500;margin:0 0 16px}
+#reset-zen .recent-history ol{list-style:none;margin:0;padding:0}
+#reset-zen .recent-history li{display:grid;grid-template-columns:110px 1fr auto;gap:12px;align-items:baseline;border-top:1px solid var(--line,#ddd);padding:12px 0;font-size:13px}
+#reset-zen .recent-history li small{color:var(--muted);font-size:12px}
+#reset-zen .recent-history summary{cursor:pointer;padding:12px 0}
+#reset-zen .recent-history p{color:var(--muted);font-size:12px}
+@media(max-width:600px){#reset-zen .recent-history li{grid-template-columns:1fr;gap:3px}}

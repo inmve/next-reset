@@ -15,6 +15,30 @@ OUT = ROOT / 'public'
 config = json.loads((ROOT / 'site.config.json').read_text())
 data = json.loads((ROOT / 'data/events.json').read_text())
 strings = json.loads((ROOT / f"locales/{config['locale']}.json").read_text())
+history = data if data.get('schemaVersion') == 2 else None
+if history:
+    providers = [
+        {'id': 'codex', 'name': 'Codex', 'company': 'OpenAI', 'pose': 'meditating', 'pingHandle': 'thsottiaux', 'cyclingDesign': 4},
+        {'id': 'claude', 'name': 'Claude Code', 'company': 'Anthropic', 'pose': 'meditating', 'pingHandle': 'AnthropicAI'},
+    ]
+    def current_fact(item):
+        for key in ('confirmedAt', 'availableAt', 'announcedAt'):
+            if item.get(key): return item[key]
+        raise ValueError('Event needs a sourced date: ' + item['id'])
+    def feed_event(item):
+        fact = current_fact(item)
+        source = fact['sources'][0]
+        announced = item.get('announcedAt')
+        return {
+            'id': item['id'], 'provider': item['provider'],
+            'status': 'banked_available' if item['type'] == 'banked_reset_grant' else 'announced' if item['status'] == 'announced' else 'confirmed_completed',
+            'type': item['type'], 'announcedAt': fact['value'],
+            'announcementPrecision': fact['precision'],
+            'expectedDate': item['expectedAt']['value'][:10] if item.get('expectedAt') else None,
+            'source': source['url'], 'author': source['author'], 'quote': source['quote'],
+            'readmeSummaryKey': 'codexSeptember26ConfirmedNews' if item['id'] == 'codex-paid-users-reset-2026-09-26' and item['status'] == 'confirmed' else 'claudeSeptember22News' if item['id'] == 'claude-banked-reset-grant-2026-09-22' else None,
+        }
+    data = {'providers': providers, 'events': [feed_event(item) for item in history['events']], 'snapshotAt': history['researchedAt']}
 now = datetime.now(timezone.utc)
 today = now.date().isoformat()
 design = int(config['design'])
@@ -26,7 +50,9 @@ if pelican_design not in range(1, 6):
 def t(key, **values):
     return strings[key].format(**values)
 def timestamp(value):
-    return datetime.fromisoformat(value.replace('Z', '+00:00'))
+    if len(value) == 10: value += 'T12:00:00Z'
+    result = datetime.fromisoformat(value.replace('Z', '+00:00'))
+    return result if result.tzinfo else result.replace(tzinfo=timezone.utc)
 def date_label(value):
     date = timestamp(value if 'T' in value else value + 'T12:00:00Z')
     return date.strftime('%B ') + str(date.day) + (f', {date.year}' if date.year != now.year else '')
@@ -37,9 +63,9 @@ def url(value, github=False):
     if github and (parsed.netloc != 'github.com' or len(parsed.path.strip('/').split('/')) != 2):
         raise ValueError('Repository links must point to an owner/repository on github.com')
     return escape(value, quote=True)
-for key in ('updatesRepository', 'sourceRepository', 'siteUrl'):
+for key in ('sourceRepository', 'siteUrl'):
     if config.get(key): url(config[key], github=key != 'siteUrl')
-missing = [key for key in ('updatesRepository', 'sourceRepository', 'siteUrl') if not config.get(key)]
+missing = [key for key in ('sourceRepository', 'siteUrl') if not config.get(key)]
 provider_repositories = config.get('providerRepositories', {})
 for provider in data['providers']:
     repository = provider_repositories.get(provider['id'])
@@ -54,6 +80,42 @@ cards, records, rows, active = [], [], [], []
 feed_rows = []
 def md(value):
     return escape(value).replace('[', r'\[').replace(']', r'\]').replace('*', r'\*').replace('_', r'\_')
+def recent_event_rows(provider_id, limit=10):
+    if not history: return []
+    items = [item for item in history['events'] if item['provider'] == provider_id]
+    return sorted(items, key=lambda item: (current_fact(item)['value'][:10], item['id']), reverse=True)[:limit]
+def history_summary(item):
+    if item['type'] == 'banked_reset_grant':
+        return t('bankedHistoryLabel'), t('bankedTimingUnknown')
+    announced, occurred, confirmed = (item.get(key) for key in ('announcedAt', 'occurredAt', 'confirmedAt'))
+    if announced and occurred:
+        if announced['precision'] != 'day' and occurred['precision'] != 'day' and announced.get('timezone') and occurred.get('timezone'):
+            hours = (timestamp(occurred['value']) - timestamp(announced['value'])).total_seconds() / 3600
+            return t('automaticHistoryLabel'), t('timeToReset', hours=f'{hours:.1f}')
+        return t('automaticHistoryLabel'), t('timingNotPrecise')
+    if announced and confirmed and announced['value'][:10] == confirmed['value'][:10]:
+        return t('automaticHistoryLabel'), t('confirmedSameDay')
+    return t('automaticHistoryLabel'), t('timingNotPrecise')
+def history_link(item):
+    fact = current_fact(item)
+    return fact['sources'][0]['url']
+def history_markdown(provider_id):
+    rows = recent_event_rows(provider_id)
+    if not rows: return ''
+    lines = []
+    for item in rows:
+        label, timing = history_summary(item)
+        lines.append(f"- [{current_fact(item)['value'][:10]}]({history_link(item)}) · {label} · {timing}")
+    return '\n\n## ' + t('recentResetsTitle') + '\n\n' + '\n'.join(lines) + '\n\n' + t('verifiedHistoryNote') + '\n'
+def history_html():
+    if not history: return ''
+    items = sorted(history['events'], key=lambda item: (current_fact(item)['value'][:10], item['id']), reverse=True)[:10]
+    def row(item):
+        label, timing = history_summary(item)
+        return '<li><a href="' + url(history_link(item)) + '" target="_blank" rel="noopener noreferrer">' + escape(current_fact(item)['value'][:10]) + '</a><span>' + escape(item['provider'].title()) + ' · ' + escape(label) + '</span><small>' + escape(timing) + '</small></li>'
+    visible = ''.join(row(item) for item in items[:5])
+    extra = '<details><summary>' + escape(t('showMoreHistory')) + '</summary><ol>' + ''.join(row(item) for item in items[5:]) + '</ol></details>' if len(items) > 5 else ''
+    return '<section class="recent-history" aria-labelledby="recent-history-title"><h2 id="recent-history-title">' + escape(t('recentResetsTitle')) + '</h2><ol>' + visible + '</ol>' + extra + '<p>' + escape(t('verifiedHistoryNote')) + '</p></section>'
 
 for provider in data['providers']:
     events = sorted((event for event in data['events'] if event['provider'] == provider['id']), key=lambda event: timestamp(event['announcedAt']), reverse=True)
@@ -159,8 +221,14 @@ for provider in data['providers']:
             news = t(event['readmeSummaryKey'], source=event['source']) + quote_md
             if announced:
                 news += '\n\n' + (t('codexNewsUnconfirmed') if not expected else t('feedExpectedDate', date=expected) + ' ' + t('feedPendingDetails'))
-        feed_readme = f"# upd {confirmation.strftime('%d.%m')} — {headline}\n\n{news}\n\n## {t('codexNewsSubscribeTitle')}\n\n{t('codexNewsSubscribe')}\n\n## {t('codexNewsWhyTitle')}\n\n{t('codexNewsWhy')}\n\n## {t('codexNewsOtherTitle')}\n\n{t(news_prefix + 'Other', **provider_repositories)}\n\n## {t('codexNewsOverviewTitle')}\n\n{t('codexNewsOverview', site=config['siteUrl'])}\n"
+        feed_readme = f"# upd {confirmation.strftime('%d.%m')} — {headline}\n\n{news}\n\n## {t('codexNewsSubscribeTitle')}\n\n{t('codexNewsSubscribe')}\n\n## {t('codexNewsWhyTitle')}\n\n{t('claudeBankedWhy' if provider['id'] == 'claude' and banked else 'codexNewsWhy')}\n\n## {t('codexNewsOtherTitle')}\n\n{t(news_prefix + 'Other', **provider_repositories)}\n\n## {t('codexNewsOverviewTitle')}\n\n{t('codexNewsOverview', site=config['siteUrl'])}\n"
+        feed_readme += history_markdown(provider['id'])
     (feed_dir / 'README.md').write_text(feed_readme)
+    if history:
+        export = {**history, 'provider': provider, 'events': recent_event_rows(provider['id'], len(history['events']))}
+        export_dir = feed_dir / 'data'
+        export_dir.mkdir(exist_ok=True)
+        (export_dir / 'events.json').write_text(json.dumps(export, ensure_ascii=False, indent=2) + '\n')
     if repository:
         feed_rows.append(f"- [{t('feedTitle', provider=provider['name'])}]({repository})")
 today_plans = [record for record in records if record['announced'] and record['expectedDate'] == today]
@@ -195,6 +263,7 @@ values.update({
     'actionUrl':url(config['updatesRepository'],True) if config.get('updatesRepository') else '#providers',
     'actionLabel':escape(t('githubUpdates' if config.get('updatesRepository') else 'seeUpdates')),
     'cards':'\n'.join(cards), 'navigation':'', 'sourceLink':'', 'subscription':'<p class="subscription-note">'+escape(t('watchHelp'))+'</p>', 'canonical':'',
+    'history':history_html(),
     'snapshot':escape(t('snapshotLabel', date=timestamp(data['snapshotAt']).strftime('%b %d, %Y · %H:%M'))),
     'state':json.dumps({'strings':strings,'cards':records,'config':config},ensure_ascii=False).replace('<','\\u003c')
 })
