@@ -47,12 +47,15 @@
       "announcedAt": "2026-09-22T00:00:00Z",
       "announcementPrecision": "day",
       "scope": "Subscription users; exact eligibility and expiry should be checked in account",
-      "source": "https://x.com/AnthropicAI/status/2102435703535939725",
+      "source": "https://www.anthropic.com/claude-opus-5-5",
       "announcementUrl": "https://x.com/AnthropicAI/status/2102435703535939725",
-      "evidence": "Official Anthropic Opus 5.5 launch page: subscription users receive a rate-limit reset they can save and use when they choose. Read directly on 2026-09-22. No claim of automatic redemption or account-specific expiry.",
+      "evidence": "Official Anthropic Opus 5.5 launch page: subscription users receive a rate-limit reset they can save and use when they choose. Read directly on 2026-09-22. No claim of automatic redemption or account-specific expiry. Re-read official page on 2026-09-26; exact reset sentence recorded with its direct source.",
       "author": "Anthropic",
       "verification": "official_announcement_read",
-      "supportingSource": "https://www.anthropic.com/claude-opus-5-5"
+      "supportingSource": "https://www.anthropic.com/claude-opus-5-5",
+      "quote": "We’re also providing subscription users a rate limit reset, which you can now save and use whenever you choose.",
+      "readmeSummaryKey": "claudeSeptember22News",
+      "verifiedAt": "2026-09-26T16:45:13.036178+00:00"
     },
     {
       "id": "codex-announcement-2026-09-22",

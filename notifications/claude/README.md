@@ -1,28 +1,23 @@
-# Claude Code reset alerts
+# upd 22.09 — a claude reset you can save for later
 
-Follow Claude Code reset news through GitHub Releases. One repository is one topic: every new announcement or confirmation becomes a release you can subscribe to.
+[anthropic announced](https://www.anthropic.com/claude-opus-5-5) a reset for subscription users:
 
-## Subscribe with GitHub Releases
+> We’re also providing subscription users a rate limit reset, which you can now save and use whenever you choose.
 
-For reset notifications: **Watch → Custom → Releases**.
+## how to subscribe?
 
-Sign in to GitHub and watch Releases. We publish one release per meaningful announcement or confirmation; README edits do not send alerts.
+select **Watch → Custom → Releases** at the top of this repo.
 
-[Read published alerts](https://github.com/inmve/claude-reset-alerts/releases)
+we post reset updates as releases so you get a GitHub notification.
 
-## Current status
+## why?
 
-**No newer reset announcement is recorded**
+get an alert to use your remaining tokens before the reset.
 
-Banked reset announced September 22. Check your account for availability and eligibility.
+## other tools?
 
-[Anthropic · 2026-09-22 · Original source](https://x.com/AnthropicAI/status/2102435703535939725)
+follow [Codex](https://github.com/inmve/codex-reset-alerts) and [Grok Bot](https://github.com/inmve/grok-reset-alerts) the same way.
 
-## Other feeds you can follow the same way
+## web version?
 
-Choose a topic, open its repository, then select **Watch → Custom → Releases**. Each feed sends only updates for its own tool.
-
-- [Codex reset alerts](https://github.com/inmve/codex-reset-alerts)
-- [Grok Bot reset alerts](https://github.com/inmve/grok-reset-alerts)
-
-[All reset updates on Next Reset](https://inmve.github.io/next-reset/) · [Source records and history](https://github.com/inmve/next-reset/blob/main/data/events.json)
+see reset announcements on [Next Reset](https://inmve.github.io/next-reset/).

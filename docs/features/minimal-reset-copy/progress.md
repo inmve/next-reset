@@ -1,13 +1,13 @@
 # Minimal reset copy publication
 
 ## Current Status
-Last Updated: 2026-09-26T16:11:52.179305+00:00
+Last Updated: 2026-09-26T16:13:58.034504+00:00
 Status: Ready for Review
-Completion: 90%
+Completion: 100%
 
 ## Current Context
 Working: final copy approved in chat; canonical EN/RU strings and generator updated. User explicitly authorized publication: «отлично, публикуем - ия. хочу уже получить».
-Pending: build, tests, publish source and feed PRs, update GitHub About, verify remote result.
+Published: source PR26 and feed PR5 merged after CI passed. About description read back; live main README exactly matches approved copy. Existing event release confirmed public. Ready for HN sharing.
 Previous news draft was published in next-reset#25 and codex-reset-alerts#4 before user requested preview. Work stopped, disclosed the premature publication, and resumed only after current approval.
 
 ## Original requests
@@ -39,7 +39,9 @@ Previous publication preceded user's preview-only instruction. Disclosure and st
 
 ## Next Steps
 - [x] Run tests, build and syntax checks.
-- [ ] Create, attach and merge PRs.
-- [ ] Update About description and verify README/release.
+- [x] Create, attach and merge PRs.
+- [x] Update About description and verify README/release.
 
 2026-09-26T16:12:33.838848+00:00: five existing tests, release build, JavaScript syntax and whitespace checks passed. Generated README reviewed against approved draft. User additionally wants a link/title ready for publication on HN; prepare copy in chat, do not submit on their behalf.
+
+- 2026-09-26T16:13:58.034504+00:00: publication verified; README and About live. No duplicate release. HN submission remains with user; provide ready title and URL. Completion notes local on merged feature branch.

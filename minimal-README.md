@@ -30,7 +30,9 @@ The source announces a reset. Completion has not been confirmed; check your acco
 
 Banked reset announced September 22. Check your account for availability and eligibility.
 
-[Anthropic · 2026-09-22 · Original source](https://x.com/AnthropicAI/status/2102435703535939725)
+> We’re also providing subscription users a rate limit reset, which you can now save and use whenever you choose.
+
+[Anthropic · 2026-09-22 · Original source](https://www.anthropic.com/claude-opus-5-5)
 
 ### Grok Bot / xAI
 
