@@ -1,6 +1,6 @@
-# Codex reset alerts
+# Alerts for upcoming Codex usage-limit resets
 
-Follow Codex reset news through GitHub Releases. One repository is one topic: every new announcement or confirmation becomes a release you can subscribe to.
+Whenever an upcoming Codex reset is announced, we publish a new GitHub release, giving you a chance to use your remaining tokens before your limits reset.
 
 ## Subscribe with GitHub Releases
 

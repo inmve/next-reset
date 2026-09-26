@@ -117,5 +117,7 @@
   "subscribeViaReleases": "Subscribe with GitHub Releases",
   "browseAlerts": "Read published alerts",
   "otherFeeds": "Other feeds you can follow the same way",
-  "otherFeedsExplanation": "Choose a topic, open its repository, then select **Watch → Custom → Releases**. Each feed sends only updates for its own tool."
+  "otherFeedsExplanation": "Choose a topic, open its repository, then select **Watch → Custom → Releases**. Each feed sends only updates for its own tool.",
+  "codexFeedTitle": "Alerts for upcoming Codex usage-limit resets",
+  "codexFeedIntro": "Whenever an upcoming Codex reset is announced, we publish a new GitHub release, giving you a chance to use your remaining tokens before your limits reset."
 }
