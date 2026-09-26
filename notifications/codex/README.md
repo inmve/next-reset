@@ -6,28 +6,20 @@
 
 the post gives no reset time.
 
-we’re still waiting for confirmation.
-
-## wanna receive alerts about resets?
+## how to subscribe?
 
 select **Watch → Custom → Releases** at the top of this repo.
 
-we post reset updates as releases.
-
-you get a GitHub notification.
+we post reset updates as releases so you get a GitHub notification.
 
 ## why?
 
-an early alert helps you use your remaining tokens before the reset.
+use your remaining tokens before the reset.
 
-finish a feature. try an idea. tackle a refactor.
-
-plan your next big task around fresh limits.
-
-## other feeds
+## other tools?
 
 follow [Claude Code](https://github.com/inmve/claude-reset-alerts) and [Grok Bot](https://github.com/inmve/grok-reset-alerts) the same way.
 
-each repo covers one tool. choose the alerts you want.
+## web version?
 
-see all tracked announcements on [Next Reset](https://inmve.github.io/next-reset/).
+see reset announcements on [Next Reset](https://inmve.github.io/next-reset/).
