@@ -5,6 +5,17 @@
   const t = (key, values = {}) => Object.entries(values).reduce((text, [k, value]) => text.replaceAll(`{${k}}`, String(value)), strings[key] ?? key);
   const preference = window.matchMedia('(prefers-reduced-motion: reduce)');
   let paused = preference.matches;
+  const titleButton = root.querySelector('button.brand');
+  const titleCode = titleButton.querySelector('code');
+  const titleKeys = ['shellTitle', 'shellTitleWatch', 'shellTitleLog'];
+  let titleIndex = Math.floor(Math.random() * titleKeys.length);
+  titleCode.textContent = t(titleKeys[titleIndex]);
+  function nextTitle() {
+    titleIndex = (titleIndex + 1) % titleKeys.length;
+    titleCode.textContent = t(titleKeys[titleIndex]);
+  }
+  titleButton.disabled = false;
+  titleButton.addEventListener('click', nextTitle);
   const bicycles = [...root.querySelectorAll('svg[data-animated="cycling"]')];
   bicycles.forEach(svg => {
     svg.pauseAnimations();

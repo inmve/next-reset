@@ -24,6 +24,8 @@ jobs:
           python-version: '3.13'
       - name: Check JavaScript syntax
         run: node --check src/site.js
+      - name: Check headline interaction
+        run: node --test tests/test_title.cjs
       - name: Check generated status and notification feeds
         run: python3 -m unittest discover -s tests
       - name: Build the release

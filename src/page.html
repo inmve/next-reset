@@ -19,7 +19,7 @@
   <a class="skip-link" href="#updates">{{skip}}</a>
   <div class="backdrop" aria-hidden="true"><div class="stars"></div><div class="sun"></div><div class="ridge"></div><div class="ridge near"></div><div class="water"></div></div>
   <header class="product-header">
-    <a class="brand" href="./" aria-label="{{homeLabel}}"><span class="shell-prompt" aria-hidden="true">$</span><code>{{shellTitle}}</code></a>
+    <button class="brand" type="button" aria-label="{{rotateTitleLabel}}" title="{{rotateTitleLabel}}" disabled><span class="shell-prompt" aria-hidden="true">$</span><code>{{shellTitle}}</code></button>
   </header>
   <main id="updates" class="home">
     <div class="intro">
@@ -27,6 +27,7 @@
       <p class="intro-sub">{{benefit}}</p>
     </div>
     <div id="providers" class="providers">{{cards}}</div>
+    {{history}}
     <div class="updates-subscription">
       <a class="github-action" href="{{actionUrl}}">{{actionLabel}}</a>
       {{subscription}}

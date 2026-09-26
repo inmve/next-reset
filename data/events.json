@@ -1,148 +1,575 @@
 {
-  "schemaVersion": 1,
-  "snapshotAt": "2026-09-26T11:25:23.705553+00:00",
-  "coverage": "Selected public reset announcements, manually verified against original sources. Not a live feed.",
-  "repositoryUrl": "https://github.com/inmve/next-reset",
+  "schemaVersion": 2,
+  "period": {
+    "from": "2026-01-01",
+    "through": "2026-09-26"
+  },
+  "researchedAt": "2026-09-26T18:28:04Z",
+  "coverage": {
+    "status": "partial",
+    "limitations": [
+      "Only two directly read Anthropic official pages currently support the two Claude events.",
+      "Most monthly/provider candidates are unresolved; January and February require more direct official-source searching.",
+      "Aggregator dates and excerpts were used only to build candidate leads and are not event evidence.",
+      "A Chrome browser can read some public X originals; direct source access is not uniformly available and most candidate posts remain unresolved. Coverage is partial, not exhaustive."
+    ]
+  },
   "events": [
     {
-      "id": "codex-reset-announced-2026-09-26",
-      "provider": "codex",
-      "status": "announced",
-      "type": "usage_reset",
-      "announcedAt": "2026-09-26T00:07:00Z",
-      "announcementPrecision": "minute",
-      "expectedDate": null,
-      "expectedAt": null,
-      "expectedWording": "No reset date or time stated. The author promises a reset; completion is not confirmed in this post.",
-      "scope": "All paid users across Codex and ChatGPT Work",
-      "scopeLabelKey": "codexPaidScope",
-      "source": "https://x.com/thsottiaux/status/2103637477760311522",
-      "author": "@thsottiaux",
-      "quote": "we’ll reset usage limits for all paid users across codex and ChatGPT work",
-      "verification": "original_post_read",
-      "verifiedAt": "2026-09-26T11:25:23.705553+00:00",
-      "evidence": "Original X post read directly in the browser on 2026-09-26. Tibo says service is back and promises usage-limit resets. No date, completion confirmation or banked-reset mechanism is stated.",
-      "readmeSummaryKey": "codexSeptember26News"
-    },
-    {
-      "id": "codex-banked-reset-2026-09-22",
-      "provider": "codex",
-      "status": "banked_available",
-      "type": "banked_usage_reset",
-      "announcedAt": "2026-09-22T18:23:37Z",
-      "announcementPrecision": "minute",
-      "scope": "Plus, Pro and Business users",
-      "scopeLabelKey": "codexBankedDetails",
-      "source": "https://x.com/thsottiaux/status/2102463847714247142",
-      "announcementUrl": "https://x.com/thsottiaux/status/2102463847714247142",
-      "evidence": "Tibo announced that OpenAI was loading a banked reset into all Plus, Pro and Business accounts alongside the GPT-6 Sol and Luna launch. The OpenAI Community launch announcement repeats this scope. Read 2026-09-23.",
-      "author": "@thsottiaux",
-      "verification": "original_post_read"
-    },
-    {
-      "id": "claude-banked-reset-2026-09-22",
+      "id": "claude-subscriber-reset-2026-04-23",
       "provider": "claude",
-      "status": "banked_available",
-      "type": "banked_usage_reset",
-      "announcedAt": "2026-09-22T00:00:00Z",
-      "announcementPrecision": "day",
-      "scope": "Subscription users; exact eligibility and expiry should be checked in account",
-      "source": "https://www.anthropic.com/claude-opus-5-5",
-      "announcementUrl": "https://x.com/AnthropicAI/status/2102435703535939725",
-      "evidence": "Official Anthropic Opus 5.5 launch page: subscription users receive a rate-limit reset they can save and use when they choose. Read directly on 2026-09-22. No claim of automatic redemption or account-specific expiry. Re-read official page on 2026-09-26; exact reset sentence recorded with its direct source.",
-      "author": "Anthropic",
-      "verification": "official_announcement_read",
-      "supportingSource": "https://www.anthropic.com/claude-opus-5-5",
-      "quote": "We’re also providing subscription users a rate limit reset, which you can now save and use whenever you choose.",
-      "readmeSummaryKey": "claudeSeptember22News",
-      "verifiedAt": "2026-09-26T16:45:13.036178+00:00"
-    },
-    {
-      "id": "codex-announcement-2026-09-22",
-      "provider": "codex",
-      "status": "announced",
-      "type": "usage_reset",
-      "announcedAt": "2026-09-22T04:31:32Z",
+      "products": [
+        "Claude Code"
+      ],
+      "type": "automatic_usage_reset",
+      "status": "confirmed",
+      "scope": {
+        "plans": null,
+        "limitWindows": null,
+        "models": null,
+        "description": "The article focuses on Claude Code quality reports and says usage limits are being reset for all subscribers; exact eligible products and plans are not enumerated.",
+        "sources": [
+          {
+            "url": "https://www.anthropic.com/engineering/april-23-postmortem",
+            "author": "Anthropic",
+            "quote": "As of April 23, we’re resetting usage limits for all subscribers.",
+            "publishedAt": {
+              "value": "2026-04-23",
+              "precision": "day",
+              "timezone": null
+            },
+            "accessedAt": "2026-09-26T18:11:08Z",
+            "verification": "original_read",
+            "evidenceNote": "Official Anthropic postmortem directly read; confirms subscriber usage limits were being reset as of Apr 23. It does not state the exact reset instant or enumerate plans."
+          }
+        ]
+      },
+      "announcedAt": null,
       "expectedAt": null,
-      "expectedWording": "Tuesday. The author does not give a specific time or timezone.",
-      "scope": "Not established",
-      "source": "https://x.com/thsottiaux/status/2102254445082116335",
-      "evidence": "Original X post opened and read directly in the browser on 2026-09-22.",
-      "author": "@thsottiaux",
-      "verification": "original_post_read",
-      "expectedDate": "2026-09-22",
-      "expectedPrecision": "day",
-      "expectedTimeZone": null
+      "occurredAt": null,
+      "confirmedAt": {
+        "value": "2026-04-23",
+        "precision": "day",
+        "timezone": null,
+        "sources": [
+          {
+            "url": "https://www.anthropic.com/engineering/april-23-postmortem",
+            "author": "Anthropic",
+            "quote": "As of April 23, we’re resetting usage limits for all subscribers.",
+            "publishedAt": {
+              "value": "2026-04-23",
+              "precision": "day",
+              "timezone": null
+            },
+            "accessedAt": "2026-09-26T18:11:08Z",
+            "verification": "original_read",
+            "evidenceNote": "Official Anthropic postmortem directly read; confirms subscriber usage limits were being reset as of Apr 23. It does not state the exact reset instant or enumerate plans."
+          }
+        ]
+      },
+      "availableAt": null,
+      "updates": [
+        {
+          "kind": "confirmation",
+          "reportedAt": {
+            "value": "2026-04-23",
+            "precision": "day",
+            "timezone": null,
+            "sources": [
+              {
+                "url": "https://www.anthropic.com/engineering/april-23-postmortem",
+                "author": "Anthropic",
+                "quote": "As of April 23, we’re resetting usage limits for all subscribers.",
+                "publishedAt": {
+                  "value": "2026-04-23",
+                  "precision": "day",
+                  "timezone": null
+                },
+                "accessedAt": "2026-09-26T18:11:08Z",
+                "verification": "original_read",
+                "evidenceNote": "Official Anthropic postmortem directly read; confirms subscriber usage limits were being reset as of Apr 23. It does not state the exact reset instant or enumerate plans."
+              }
+            ]
+          },
+          "expectedAt": null,
+          "description": "Anthropic states that subscriber usage limits are being reset as of this date.",
+          "sources": [
+            {
+              "url": "https://www.anthropic.com/engineering/april-23-postmortem",
+              "author": "Anthropic",
+              "quote": "As of April 23, we’re resetting usage limits for all subscribers.",
+              "publishedAt": {
+                "value": "2026-04-23",
+                "precision": "day",
+                "timezone": null
+              },
+              "accessedAt": "2026-09-26T18:11:08Z",
+              "verification": "original_read",
+              "evidenceNote": "Official Anthropic postmortem directly read; confirms subscriber usage limits were being reset as of Apr 23. It does not state the exact reset instant or enumerate plans."
+            }
+          ]
+        }
+      ],
+      "notes": "The source establishes a date of confirmation, not a distinct exact occurrence time. No announcement-to-reset delay can be calculated."
     },
     {
-      "id": "codex-reset-2026-09-12",
+      "id": "codex-astra-reset-2026-09-12",
       "provider": "codex",
-      "status": "confirmed_completed",
-      "type": "usage_reset",
-      "announcedAt": "2026-09-12T08:09:17Z",
-      "effectiveAt": null,
-      "scope": "Astra users, as stated in the quoted announcement",
-      "source": "https://x.com/thsottiaux/status/2098685367058612394",
-      "evidence": "Original X post and its quoted announcement opened and read directly in the browser on 2026-09-22.",
-      "author": "@thsottiaux",
-      "verification": "original_post_read"
+      "products": [
+        "Astra users (product surface unspecified)"
+      ],
+      "type": "automatic_usage_reset",
+      "status": "confirmed",
+      "scope": {
+        "plans": null,
+        "limitWindows": null,
+        "models": [
+          "Astra"
+        ],
+        "description": "The original addresses Astra users and announces a reset; the later quoted follow-up says the reset propagated. The product surface and eligible plans/windows are not named, so no broader Codex audience is inferred.",
+        "sources": [
+          {
+            "url": "https://x.com/thsottiaux/status/2098612714704891959",
+            "author": "@thsottiaux",
+            "quote": "And of course, a reset is also landing by midnight today.",
+            "publishedAt": {
+              "value": "2026-09-12",
+              "precision": "day",
+              "timezone": null
+            },
+            "accessedAt": "2026-09-26T18:28:04Z",
+            "verification": "original_read",
+            "evidenceNote": "Original X post opened directly in Chrome; text and displayed timestamp read. X displayed 8:20 AM · Sep 12, 2026; viewer timezone is unknown, so the stored fact is date-only. Announcement addresses “Astra users”; it does not state exact product surface. The “by midnight today” wording is preserved without assigning a timezone or exact expected instant."
+          },
+          {
+            "url": "https://x.com/thsottiaux/status/2098685367058612394",
+            "author": "@thsottiaux",
+            "quote": "Reset all propagated. Sweet dreams.",
+            "publishedAt": {
+              "value": "2026-09-12",
+              "precision": "day",
+              "timezone": null
+            },
+            "accessedAt": "2026-09-26T18:28:04Z",
+            "verification": "original_read",
+            "evidenceNote": "Original X post opened directly in Chrome; text and displayed timestamp read. X displayed 1:09 PM · Sep 12, 2026; viewer timezone is unknown, so the stored fact is date-only. Direct follow-up quotes the announcement and confirms reset propagation."
+          }
+        ]
+      },
+      "announcedAt": {
+        "value": "2026-09-12",
+        "precision": "day",
+        "timezone": null,
+        "sources": [
+          {
+            "url": "https://x.com/thsottiaux/status/2098612714704891959",
+            "author": "@thsottiaux",
+            "quote": "And of course, a reset is also landing by midnight today.",
+            "publishedAt": {
+              "value": "2026-09-12",
+              "precision": "day",
+              "timezone": null
+            },
+            "accessedAt": "2026-09-26T18:28:04Z",
+            "verification": "original_read",
+            "evidenceNote": "Original X post opened directly in Chrome; text and displayed timestamp read. X displayed 8:20 AM · Sep 12, 2026; viewer timezone is unknown, so the stored fact is date-only. Announcement addresses “Astra users”; it does not state exact product surface. The “by midnight today” wording is preserved without assigning a timezone or exact expected instant."
+          }
+        ]
+      },
+      "expectedAt": null,
+      "occurredAt": null,
+      "confirmedAt": {
+        "value": "2026-09-12",
+        "precision": "day",
+        "timezone": null,
+        "sources": [
+          {
+            "url": "https://x.com/thsottiaux/status/2098685367058612394",
+            "author": "@thsottiaux",
+            "quote": "Reset all propagated. Sweet dreams.",
+            "publishedAt": {
+              "value": "2026-09-12",
+              "precision": "day",
+              "timezone": null
+            },
+            "accessedAt": "2026-09-26T18:28:04Z",
+            "verification": "original_read",
+            "evidenceNote": "Original X post opened directly in Chrome; text and displayed timestamp read. X displayed 1:09 PM · Sep 12, 2026; viewer timezone is unknown, so the stored fact is date-only. Direct follow-up quotes the announcement and confirms reset propagation."
+          }
+        ]
+      },
+      "availableAt": null,
+      "updates": [
+        {
+          "kind": "announcement",
+          "reportedAt": {
+            "value": "2026-09-12",
+            "precision": "day",
+            "timezone": null,
+            "sources": [
+              {
+                "url": "https://x.com/thsottiaux/status/2098612714704891959",
+                "author": "@thsottiaux",
+                "quote": "And of course, a reset is also landing by midnight today.",
+                "publishedAt": {
+                  "value": "2026-09-12",
+                  "precision": "day",
+                  "timezone": null
+                },
+                "accessedAt": "2026-09-26T18:28:04Z",
+                "verification": "original_read",
+                "evidenceNote": "Original X post opened directly in Chrome; text and displayed timestamp read. X displayed 8:20 AM · Sep 12, 2026; viewer timezone is unknown, so the stored fact is date-only. Announcement addresses “Astra users”; it does not state exact product surface. The “by midnight today” wording is preserved without assigning a timezone or exact expected instant."
+              }
+            ]
+          },
+          "expectedAt": null,
+          "description": "A reset was announced for Astra users with the wording “by midnight today”; exact timezone and expected instant are unknown.",
+          "sources": [
+            {
+              "url": "https://x.com/thsottiaux/status/2098612714704891959",
+              "author": "@thsottiaux",
+              "quote": "And of course, a reset is also landing by midnight today.",
+              "publishedAt": {
+                "value": "2026-09-12",
+                "precision": "day",
+                "timezone": null
+              },
+              "accessedAt": "2026-09-26T18:28:04Z",
+              "verification": "original_read",
+              "evidenceNote": "Original X post opened directly in Chrome; text and displayed timestamp read. X displayed 8:20 AM · Sep 12, 2026; viewer timezone is unknown, so the stored fact is date-only. Announcement addresses “Astra users”; it does not state exact product surface. The “by midnight today” wording is preserved without assigning a timezone or exact expected instant."
+            }
+          ]
+        },
+        {
+          "kind": "confirmation",
+          "reportedAt": {
+            "value": "2026-09-12",
+            "precision": "day",
+            "timezone": null,
+            "sources": [
+              {
+                "url": "https://x.com/thsottiaux/status/2098685367058612394",
+                "author": "@thsottiaux",
+                "quote": "Reset all propagated. Sweet dreams.",
+                "publishedAt": {
+                  "value": "2026-09-12",
+                  "precision": "day",
+                  "timezone": null
+                },
+                "accessedAt": "2026-09-26T18:28:04Z",
+                "verification": "original_read",
+                "evidenceNote": "Original X post opened directly in Chrome; text and displayed timestamp read. X displayed 1:09 PM · Sep 12, 2026; viewer timezone is unknown, so the stored fact is date-only. Direct follow-up quotes the announcement and confirms reset propagation."
+              }
+            ]
+          },
+          "expectedAt": null,
+          "description": "The author quoted the announcement and confirmed that the reset had propagated.",
+          "sources": [
+            {
+              "url": "https://x.com/thsottiaux/status/2098685367058612394",
+              "author": "@thsottiaux",
+              "quote": "Reset all propagated. Sweet dreams.",
+              "publishedAt": {
+                "value": "2026-09-12",
+                "precision": "day",
+                "timezone": null
+              },
+              "accessedAt": "2026-09-26T18:28:04Z",
+              "verification": "original_read",
+              "evidenceNote": "Original X post opened directly in Chrome; text and displayed timestamp read. X displayed 1:09 PM · Sep 12, 2026; viewer timezone is unknown, so the stored fact is date-only. Direct follow-up quotes the announcement and confirms reset propagation."
+            }
+          ]
+        }
+      ],
+      "notes": "Announcement and confirmation display Sep 12 in X. Displayed local times 8:20 AM and 1:09 PM are retained in evidence notes, but the viewer timezone is unknown; exact elapsed hours and occurrence time are not inferred."
     },
     {
-      "id": "claude-reset-2026-09-04",
+      "id": "claude-banked-reset-grant-2026-09-22",
       "provider": "claude",
-      "status": "confirmed_completed",
-      "type": "weekly_usage_reset",
-      "announcedAt": "2026-09-04T20:08:45Z",
-      "effectiveAt": null,
-      "scope": "Claude Max",
-      "source": "https://x.com/lydiahallie/status/2095967323412930677",
-      "evidence": "Original X post opened and read directly in the browser on 2026-09-22.",
-      "author": "@lydiahallie",
-      "verification": "original_post_read",
-      "scopeLabelKey": "maxPlans"
+      "products": [
+        "Claude"
+      ],
+      "type": "banked_reset_grant",
+      "status": "available",
+      "scope": {
+        "plans": null,
+        "limitWindows": null,
+        "models": null,
+        "description": "Subscription users; source does not specify eligible subscription plans or exact limit window. The reset can be saved and used later.",
+        "sources": [
+          {
+            "url": "https://www.anthropic.com/claude-opus-5-5",
+            "author": "Anthropic",
+            "quote": "We’re also providing subscription users a rate limit reset, which you can now save and use whenever you choose.",
+            "publishedAt": {
+              "value": "2026-09-22",
+              "precision": "day",
+              "timezone": null
+            },
+            "accessedAt": "2026-09-26T18:11:08Z",
+            "verification": "original_read",
+            "evidenceNote": "Official Anthropic launch page directly read; says subscription users can save and later use a rate-limit reset. Page date is Sep 22; exact credit posting time, plans, and expiry are not stated."
+          }
+        ]
+      },
+      "announcedAt": null,
+      "expectedAt": null,
+      "occurredAt": null,
+      "confirmedAt": {
+        "value": "2026-09-22",
+        "precision": "day",
+        "timezone": null,
+        "sources": [
+          {
+            "url": "https://www.anthropic.com/claude-opus-5-5",
+            "author": "Anthropic",
+            "quote": "We’re also providing subscription users a rate limit reset, which you can now save and use whenever you choose.",
+            "publishedAt": {
+              "value": "2026-09-22",
+              "precision": "day",
+              "timezone": null
+            },
+            "accessedAt": "2026-09-26T18:11:08Z",
+            "verification": "original_read",
+            "evidenceNote": "Official Anthropic launch page directly read; says subscription users can save and later use a rate-limit reset. Page date is Sep 22; exact credit posting time, plans, and expiry are not stated."
+          }
+        ]
+      },
+      "availableAt": {
+        "value": "2026-09-22",
+        "precision": "day",
+        "timezone": null,
+        "sources": [
+          {
+            "url": "https://www.anthropic.com/claude-opus-5-5",
+            "author": "Anthropic",
+            "quote": "We’re also providing subscription users a rate limit reset, which you can now save and use whenever you choose.",
+            "publishedAt": {
+              "value": "2026-09-22",
+              "precision": "day",
+              "timezone": null
+            },
+            "accessedAt": "2026-09-26T18:11:08Z",
+            "verification": "original_read",
+            "evidenceNote": "Official Anthropic launch page directly read; says subscription users can save and later use a rate-limit reset. Page date is Sep 22; exact credit posting time, plans, and expiry are not stated."
+          }
+        ]
+      },
+      "updates": [
+        {
+          "kind": "availability",
+          "reportedAt": {
+            "value": "2026-09-22",
+            "precision": "day",
+            "timezone": null,
+            "sources": [
+              {
+                "url": "https://www.anthropic.com/claude-opus-5-5",
+                "author": "Anthropic",
+                "quote": "We’re also providing subscription users a rate limit reset, which you can now save and use whenever you choose.",
+                "publishedAt": {
+                  "value": "2026-09-22",
+                  "precision": "day",
+                  "timezone": null
+                },
+                "accessedAt": "2026-09-26T18:11:08Z",
+                "verification": "original_read",
+                "evidenceNote": "Official Anthropic launch page directly read; says subscription users can save and later use a rate-limit reset. Page date is Sep 22; exact credit posting time, plans, and expiry are not stated."
+              }
+            ]
+          },
+          "expectedAt": null,
+          "description": "Anthropic says a reset is available to subscription users to save and redeem at their discretion.",
+          "sources": [
+            {
+              "url": "https://www.anthropic.com/claude-opus-5-5",
+              "author": "Anthropic",
+              "quote": "We’re also providing subscription users a rate limit reset, which you can now save and use whenever you choose.",
+              "publishedAt": {
+                "value": "2026-09-22",
+                "precision": "day",
+                "timezone": null
+              },
+              "accessedAt": "2026-09-26T18:11:08Z",
+              "verification": "original_read",
+              "evidenceNote": "Official Anthropic launch page directly read; says subscription users can save and later use a rate-limit reset. Page date is Sep 22; exact credit posting time, plans, and expiry are not stated."
+            }
+          ]
+        }
+      ],
+      "notes": "Date-only availability follows the page date. The actual time accounts received the grant is not stated; grant availability is distinct from user redemption."
     },
     {
-      "id": "grok-bot-reset-2026-09-05",
-      "provider": "grok",
-      "status": "confirmed_completed",
-      "type": "usage_reset",
-      "announcedAt": "2026-09-05T18:24:39Z",
-      "effectiveAt": null,
-      "scope": "Grok Bot users; not all Grok products",
-      "source": "https://x.com/bot/status/2096303514230423629",
-      "evidence": "Original X post opened and read directly in the browser on 2026-09-22.",
-      "author": "@bot",
-      "verification": "original_post_read",
-      "scopeLabelKey": "grokBotOnly"
-    }
-  ],
-  "sourceType": "official_announcements",
-  "upstreamDiscovery": [
-    "https://whenreset.dev/"
-  ],
-  "verifiedOn": "2026-09-22",
-  "providers": [
-    {
-      "id": "codex",
-      "name": "Codex",
-      "company": "OpenAI",
-      "pose": "meditating",
-      "pingHandle": "thsottiaux",
-      "cyclingDesign": 4
-    },
-    {
-      "id": "claude",
-      "name": "Claude Code",
-      "company": "Anthropic",
-      "pose": "meditating",
-      "pingHandle": "AnthropicAI"
-    },
-    {
-      "id": "grok",
-      "name": "Grok Bot",
-      "company": "xAI",
-      "pose": "meditating",
-      "pingHandle": "elonmusk"
+      "id": "codex-paid-users-reset-2026-09-26",
+      "provider": "codex",
+      "products": [
+        "Codex",
+        "ChatGPT Work"
+      ],
+      "type": "automatic_usage_reset",
+      "status": "confirmed",
+      "scope": {
+        "plans": [
+          "paid users"
+        ],
+        "limitWindows": null,
+        "models": null,
+        "description": "The author announced usage-limit resets for paid users across Codex and ChatGPT Work, then confirmed that resets had propagated. The exact eligible paid plans and affected limit windows are not specified.",
+        "sources": [
+          {
+            "url": "https://x.com/thsottiaux/status/2103637477760311522",
+            "author": "@thsottiaux",
+            "quote": "we’ll reset usage limits for all paid users across codex and ChatGPT work",
+            "publishedAt": {
+              "value": "2026-09-26",
+              "precision": "day",
+              "timezone": null
+            },
+            "accessedAt": "2026-09-26T18:24:08Z",
+            "verification": "original_read",
+            "evidenceNote": "Original X post opened directly in Chrome and its text plus displayed timestamp were read. X displayed 5:07 AM · Sep 26, 2026; viewer timezone is unknown, so the stored fact remains date-only. This is the prospective reset announcement for paid Codex and ChatGPT Work users."
+          },
+          {
+            "url": "https://x.com/thsottiaux/status/2103911959544610829",
+            "author": "@thsottiaux",
+            "quote": "Resets all propagated. That will be all. Have a fantastic weekend.",
+            "publishedAt": {
+              "value": "2026-09-26",
+              "precision": "day",
+              "timezone": null
+            },
+            "accessedAt": "2026-09-26T18:24:08Z",
+            "verification": "original_read",
+            "evidenceNote": "Original X post opened directly in Chrome and its text plus displayed timestamp were read. X displayed 11:17 PM · Sep 26, 2026; viewer timezone is unknown, so the stored fact remains date-only. This is a follow-up confirmation that resets propagated; interpreted with the same-day reset announcement above."
+          }
+        ]
+      },
+      "announcedAt": {
+        "value": "2026-09-26",
+        "precision": "day",
+        "timezone": null,
+        "sources": [
+          {
+            "url": "https://x.com/thsottiaux/status/2103637477760311522",
+            "author": "@thsottiaux",
+            "quote": "we’ll reset usage limits for all paid users across codex and ChatGPT work",
+            "publishedAt": {
+              "value": "2026-09-26",
+              "precision": "day",
+              "timezone": null
+            },
+            "accessedAt": "2026-09-26T18:24:08Z",
+            "verification": "original_read",
+            "evidenceNote": "Original X post opened directly in Chrome and its text plus displayed timestamp were read. X displayed 5:07 AM · Sep 26, 2026; viewer timezone is unknown, so the stored fact remains date-only. This is the prospective reset announcement for paid Codex and ChatGPT Work users."
+          }
+        ]
+      },
+      "expectedAt": null,
+      "occurredAt": null,
+      "confirmedAt": {
+        "value": "2026-09-26",
+        "precision": "day",
+        "timezone": null,
+        "sources": [
+          {
+            "url": "https://x.com/thsottiaux/status/2103911959544610829",
+            "author": "@thsottiaux",
+            "quote": "Resets all propagated. That will be all. Have a fantastic weekend.",
+            "publishedAt": {
+              "value": "2026-09-26",
+              "precision": "day",
+              "timezone": null
+            },
+            "accessedAt": "2026-09-26T18:24:08Z",
+            "verification": "original_read",
+            "evidenceNote": "Original X post opened directly in Chrome and its text plus displayed timestamp were read. X displayed 11:17 PM · Sep 26, 2026; viewer timezone is unknown, so the stored fact remains date-only. This is a follow-up confirmation that resets propagated; interpreted with the same-day reset announcement above."
+          }
+        ]
+      },
+      "availableAt": null,
+      "updates": [
+        {
+          "kind": "announcement",
+          "reportedAt": {
+            "value": "2026-09-26",
+            "precision": "day",
+            "timezone": null,
+            "sources": [
+              {
+                "url": "https://x.com/thsottiaux/status/2103637477760311522",
+                "author": "@thsottiaux",
+                "quote": "we’ll reset usage limits for all paid users across codex and ChatGPT work",
+                "publishedAt": {
+                  "value": "2026-09-26",
+                  "precision": "day",
+                  "timezone": null
+                },
+                "accessedAt": "2026-09-26T18:24:08Z",
+                "verification": "original_read",
+                "evidenceNote": "Original X post opened directly in Chrome and its text plus displayed timestamp were read. X displayed 5:07 AM · Sep 26, 2026; viewer timezone is unknown, so the stored fact remains date-only. This is the prospective reset announcement for paid Codex and ChatGPT Work users."
+              }
+            ]
+          },
+          "expectedAt": null,
+          "description": "Announced a usage-limit reset for paid users across Codex and ChatGPT Work; no specific expected time was stated.",
+          "sources": [
+            {
+              "url": "https://x.com/thsottiaux/status/2103637477760311522",
+              "author": "@thsottiaux",
+              "quote": "we’ll reset usage limits for all paid users across codex and ChatGPT work",
+              "publishedAt": {
+                "value": "2026-09-26",
+                "precision": "day",
+                "timezone": null
+              },
+              "accessedAt": "2026-09-26T18:24:08Z",
+              "verification": "original_read",
+              "evidenceNote": "Original X post opened directly in Chrome and its text plus displayed timestamp were read. X displayed 5:07 AM · Sep 26, 2026; viewer timezone is unknown, so the stored fact remains date-only. This is the prospective reset announcement for paid Codex and ChatGPT Work users."
+            }
+          ]
+        },
+        {
+          "kind": "confirmation",
+          "reportedAt": {
+            "value": "2026-09-26",
+            "precision": "day",
+            "timezone": null,
+            "sources": [
+              {
+                "url": "https://x.com/thsottiaux/status/2103911959544610829",
+                "author": "@thsottiaux",
+                "quote": "Resets all propagated. That will be all. Have a fantastic weekend.",
+                "publishedAt": {
+                  "value": "2026-09-26",
+                  "precision": "day",
+                  "timezone": null
+                },
+                "accessedAt": "2026-09-26T18:24:08Z",
+                "verification": "original_read",
+                "evidenceNote": "Original X post opened directly in Chrome and its text plus displayed timestamp were read. X displayed 11:17 PM · Sep 26, 2026; viewer timezone is unknown, so the stored fact remains date-only. This is a follow-up confirmation that resets propagated; interpreted with the same-day reset announcement above."
+              }
+            ]
+          },
+          "expectedAt": null,
+          "description": "Confirmed that the resets had propagated.",
+          "sources": [
+            {
+              "url": "https://x.com/thsottiaux/status/2103911959544610829",
+              "author": "@thsottiaux",
+              "quote": "Resets all propagated. That will be all. Have a fantastic weekend.",
+              "publishedAt": {
+                "value": "2026-09-26",
+                "precision": "day",
+                "timezone": null
+              },
+              "accessedAt": "2026-09-26T18:24:08Z",
+              "verification": "original_read",
+              "evidenceNote": "Original X post opened directly in Chrome and its text plus displayed timestamp were read. X displayed 11:17 PM · Sep 26, 2026; viewer timezone is unknown, so the stored fact remains date-only. This is a follow-up confirmation that resets propagated; interpreted with the same-day reset announcement above."
+            }
+          ]
+        }
+      ],
+      "notes": "Both posts display Sep 26, 2026 in X local display. Displayed times (5:07 AM and 11:17 PM) are retained in source evidence notes, but the display timezone is unknown; no exact elapsed hours or occurrence time is inferred. Announcement-to-confirmation is date-level only."
     }
   ]
 }

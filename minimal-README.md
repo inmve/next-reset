@@ -6,7 +6,6 @@ Choose the tool you want alerts for:
 
 - [Codex reset alerts](https://github.com/inmve/codex-reset-alerts)
 - [Claude Code reset alerts](https://github.com/inmve/claude-reset-alerts)
-- [Grok Bot reset alerts](https://github.com/inmve/grok-reset-alerts)
 
 You can also keep watching this repository for combined updates.
 
@@ -16,30 +15,22 @@ For reset notifications: **Watch → Custom → Releases**.
 
 ### Codex / OpenAI
 
-**Reset announced — awaiting confirmation**
+**Last confirmed reset**
 
-The source announces a reset. Completion has not been confirmed; check your account for availability. Date not announced. The announcement covers all paid users across Codex and ChatGPT Work.
+Last recorded reset confirmation: September 26.
 
-> we’ll reset usage limits for all paid users across codex and ChatGPT work
+> Resets all propagated. That will be all. Have a fantastic weekend.
 
-[@thsottiaux · 2026-09-26 00:07 UTC · Original source](https://x.com/thsottiaux/status/2103637477760311522)
+[@thsottiaux · 2026-09-26 · Original source](https://x.com/thsottiaux/status/2103911959544610829)
 
 ### Claude Code / Anthropic
 
-**No newer reset announcement is recorded**
+**Banked reset available**
 
-Banked reset announced September 22. Check your account for availability and eligibility.
+A banked reset is available as of September 22. Check your account for eligibility.
 
 > We’re also providing subscription users a rate limit reset, which you can now save and use whenever you choose.
 
 [Anthropic · 2026-09-22 · Original source](https://www.anthropic.com/claude-opus-5-5)
-
-### Grok Bot / xAI
-
-**No newer reset announcement is recorded**
-
-Last recorded reset confirmation: September 5. Grok Bot only.
-
-[@bot · 2026-09-05 18:24 UTC · Original source](https://x.com/bot/status/2096303514230423629)
 
 Check out website — [Next Reset](https://inmve.github.io/next-reset/).

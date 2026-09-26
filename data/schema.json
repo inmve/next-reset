@@ -1,0 +1,524 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema.json",
+  "title": "Public Reset History v2",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "period",
+    "researchedAt",
+    "coverage",
+    "events"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": 2
+    },
+    "period": {
+      "type": "object",
+      "required": [
+        "from",
+        "through"
+      ],
+      "properties": {
+        "from": {
+          "const": "2026-01-01"
+        },
+        "through": {
+          "const": "2026-09-26"
+        }
+      },
+      "additionalProperties": false
+    },
+    "researchedAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "coverage": {
+      "type": "object",
+      "required": [
+        "status",
+        "limitations"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "partial",
+            "provisional",
+            "reviewed"
+          ]
+        },
+        "limitations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "events": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/event"
+      }
+    }
+  },
+  "$defs": {
+    "temporalFact": {
+      "type": "object",
+      "required": [
+        "value",
+        "precision",
+        "timezone",
+        "sources"
+      ],
+      "properties": {
+        "value": {
+          "type": "string"
+        },
+        "precision": {
+          "enum": [
+            "day",
+            "minute",
+            "second"
+          ]
+        },
+        "timezone": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "sources": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/source"
+          },
+          "minItems": 1
+        }
+      },
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "precision": {
+                "const": "day"
+              }
+            },
+            "required": [
+              "precision"
+            ]
+          },
+          "then": {
+            "properties": {
+              "value": {
+                "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "precision": {
+                "const": "minute"
+              }
+            },
+            "required": [
+              "precision"
+            ]
+          },
+          "then": {
+            "properties": {
+              "value": {
+                "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}(?:Z|[+-]\\d{2}:\\d{2})$"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "precision": {
+                "const": "second"
+              }
+            },
+            "required": [
+              "precision"
+            ]
+          },
+          "then": {
+            "properties": {
+              "value": {
+                "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:Z|[+-]\\d{2}:\\d{2})$"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "source": {
+      "type": "object",
+      "required": [
+        "url",
+        "author",
+        "quote",
+        "publishedAt",
+        "accessedAt",
+        "verification",
+        "evidenceNote"
+      ],
+      "properties": {
+        "url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "author": {
+          "type": "string"
+        },
+        "quote": {
+          "type": "string"
+        },
+        "publishedAt": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/publishedFact"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "accessedAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "verification": {
+          "enum": [
+            "original_read",
+            "archived_original_read"
+          ]
+        },
+        "evidenceNote": {
+          "type": "string"
+        },
+        "archiveUrl": {
+          "type": "string",
+          "format": "uri"
+        }
+      },
+      "additionalProperties": false
+    },
+    "publishedFact": {
+      "type": "object",
+      "required": [
+        "value",
+        "precision",
+        "timezone"
+      ],
+      "properties": {
+        "value": {
+          "type": "string"
+        },
+        "precision": {
+          "enum": [
+            "day",
+            "minute",
+            "second"
+          ]
+        },
+        "timezone": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "precision": {
+                "const": "day"
+              }
+            },
+            "required": [
+              "precision"
+            ]
+          },
+          "then": {
+            "properties": {
+              "value": {
+                "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "precision": {
+                "const": "minute"
+              }
+            },
+            "required": [
+              "precision"
+            ]
+          },
+          "then": {
+            "properties": {
+              "value": {
+                "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}(?:Z|[+-]\\d{2}:\\d{2})$"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "precision": {
+                "const": "second"
+              }
+            },
+            "required": [
+              "precision"
+            ]
+          },
+          "then": {
+            "properties": {
+              "value": {
+                "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:Z|[+-]\\d{2}:\\d{2})$"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "update": {
+      "type": "object",
+      "required": [
+        "kind",
+        "reportedAt",
+        "expectedAt",
+        "description",
+        "sources"
+      ],
+      "properties": {
+        "kind": {
+          "type": "string"
+        },
+        "reportedAt": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/temporalFact"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "expectedAt": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/temporalFact"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "description": {
+          "type": "string"
+        },
+        "sources": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/source"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "scope": {
+      "type": "object",
+      "required": [
+        "plans",
+        "limitWindows",
+        "models",
+        "description",
+        "sources"
+      ],
+      "properties": {
+        "plans": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
+        },
+        "limitWindows": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
+        },
+        "models": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
+        },
+        "description": {
+          "type": "string"
+        },
+        "sources": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/source"
+          },
+          "minItems": 1
+        }
+      },
+      "additionalProperties": false
+    },
+    "event": {
+      "type": "object",
+      "required": [
+        "id",
+        "provider",
+        "products",
+        "type",
+        "status",
+        "scope",
+        "announcedAt",
+        "expectedAt",
+        "occurredAt",
+        "confirmedAt",
+        "availableAt",
+        "updates",
+        "notes"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+        },
+        "provider": {
+          "enum": [
+            "codex",
+            "claude"
+          ]
+        },
+        "products": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1
+        },
+        "type": {
+          "enum": [
+            "automatic_usage_reset",
+            "banked_reset_grant"
+          ]
+        },
+        "status": {
+          "enum": [
+            "announced",
+            "available",
+            "confirmed",
+            "cancelled",
+            "disputed"
+          ]
+        },
+        "scope": {
+          "$ref": "#/$defs/scope"
+        },
+        "announcedAt": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/temporalFact"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "expectedAt": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/temporalFact"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "occurredAt": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/temporalFact"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "confirmedAt": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/temporalFact"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "availableAt": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/temporalFact"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "updates": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/update"
+          }
+        },
+        "notes": {
+          "type": "string"
+        },
+        "relatedEventIds": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "classificationSources": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/source"
+          }
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}
