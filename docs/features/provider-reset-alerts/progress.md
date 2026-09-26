@@ -1,14 +1,14 @@
 # Provider reset alerts and September 26 Codex announcement
 
 ## Current Status
-Last Updated: 2026-09-26T11:32:19.824191+00:00
-Status: Testing
-Completion: 85%
+Last Updated: 2026-09-26T11:36:30.285425+00:00
+Status: Ready for Review
+Completion: 95%
 
 ## Current Context
 - Working: fresh main cloned/pulled for next-reset, free-ai-coding and token-limit-resets. Baseline release build and JavaScript syntax check pass. Original X post read directly.
-- Incomplete: publication; all requested code/content is prepared. PR creation and CI verification next.
-- Next: create PRs in six repositories, attach each to this task, check site CI, prepare draft release and present final publication step.
+- Incomplete: final publication awaits user approval. All requested code/content and six PRs are prepared; source CI build passed. Two Codex event releases are drafts and have not notified subscribers.
+- Next on approval: merge the three tool-feed PRs first, then the two combined-feed PRs, then Next Reset #22; verify Pages deploy and live source/quote/buttons; publish the two prepared Codex announcement drafts (dedicated Codex and active combined free-ai-coding). Check for duplicates and set release target to merged main before publication.
 
 ## Original requests
 1. «так, найди тот проект по кодекса апдейтам и давай заапдейтим уже вот это: https://x.com/i/status/2103637477760311522»
@@ -42,7 +42,8 @@ Completion: 85%
 - [x] Record exit-intent creature idea in backlog.
 - [x] Prepare notification repositories and concrete release draft.
 - [x] Run tests/build/syntax/diff checks and inspect rendered site.
-- [ ] Create/attach PRs; present final publication step.
+- [x] Create/attach PRs; present final publication step.
+- [ ] Merge approved PRs, verify Pages deployment, then publish the prepared Codex alert drafts.
 
 - 2026-09-26: Added five regression tests; observed failures before implementation. Implemented event/quote rendering, separate generated feeds, per-provider subscriptions and EN/RU locale text; all five tests pass. Added exit-intent creature to backlog. Browser inspection confirms original quote, link and provider buttons; remote repositories and publication pending.
 
@@ -71,3 +72,16 @@ Completion: 85%
 
 ## Budget checkpoint
 Renewed allowance baseline 21%; latest account-wide reading 23%, +2 pp, 13 pp remaining; reset 1790755860. State kept in tool store and workspace memory.
+
+## Review and publication references
+- next-reset: https://github.com/inmve/next-reset/pull/22
+- codex-reset-alerts: https://github.com/inmve/codex-reset-alerts/pull/1
+- claude-reset-alerts: https://github.com/inmve/claude-reset-alerts/pull/1
+- grok-reset-alerts: https://github.com/inmve/grok-reset-alerts/pull/1
+- free-ai-coding: https://github.com/inmve/free-ai-coding/pull/58
+- token-limit-resets: https://github.com/inmve/token-limit-resets/pull/9
+- All six PRs attached to the current Codex task. Source CI build passed: https://github.com/inmve/next-reset/actions/runs/36239182381
+- Draft release tag in codex-reset-alerts and free-ai-coding: codex-reset-announced-2026-09-26. Titles say announced, awaiting confirmation. Both target feature/provider-reset-alerts until final merge/publication. No release sent to the legacy token-limit-resets feed to avoid reviving an obsolete channel; README guides users to current feeds.
+- Publication order prevents website buttons pointing at incomplete feeds. Source repository remains authoritative; feeds are generated snapshots and manually published releases, not a new automatic monitoring service.
+- Browser check: desktop and 375px quote/CTA layout inspected; mobile contentWidth=375 equals viewport width=375.
+- No application code or README updates pushed directly to existing main branches. New repository initialization used GitHub's standard default README; all final feed content is in feature PRs.
