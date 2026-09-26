@@ -1,9 +1,28 @@
 {
   "schemaVersion": 1,
-  "snapshotAt": "2026-09-23T06:47:43+00:00",
+  "snapshotAt": "2026-09-26T11:25:23.705553+00:00",
   "coverage": "Selected public reset announcements, manually verified against original sources. Not a live feed.",
   "repositoryUrl": "https://github.com/inmve/next-reset",
   "events": [
+    {
+      "id": "codex-reset-announced-2026-09-26",
+      "provider": "codex",
+      "status": "announced",
+      "type": "usage_reset",
+      "announcedAt": "2026-09-26T00:07:00Z",
+      "announcementPrecision": "minute",
+      "expectedDate": null,
+      "expectedAt": null,
+      "expectedWording": "No reset date or time stated. The author promises a reset; completion is not confirmed in this post.",
+      "scope": "All paid users across Codex and ChatGPT Work",
+      "scopeLabelKey": "codexPaidScope",
+      "source": "https://x.com/thsottiaux/status/2103637477760311522",
+      "author": "@thsottiaux",
+      "quote": "we’ll reset usage limits for all paid users across codex and ChatGPT work",
+      "verification": "original_post_read",
+      "verifiedAt": "2026-09-26T11:25:23.705553+00:00",
+      "evidence": "Original X post read directly in the browser on 2026-09-26. Tibo says service is back and promises usage-limit resets. No date, completion confirmation or banked-reset mechanism is stated."
+    },
     {
       "id": "codex-banked-reset-2026-09-22",
       "provider": "codex",

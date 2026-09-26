@@ -40,10 +40,21 @@ def url(value, github=False):
 for key in ('updatesRepository', 'sourceRepository', 'siteUrl'):
     if config.get(key): url(config[key], github=key != 'siteUrl')
 missing = [key for key in ('updatesRepository', 'sourceRepository', 'siteUrl') if not config.get(key)]
+provider_repositories = config.get('providerRepositories', {})
+for provider in data['providers']:
+    repository = provider_repositories.get(provider['id'])
+    if repository:
+        url(repository, github=True)
+    else:
+        missing.append('providerRepositories.' + provider['id'])
 if '--release' in sys.argv and missing:
     raise SystemExit('Public addresses still needed: ' + ', '.join(missing))
 OUT.mkdir(exist_ok=True)
 cards, records, rows, active = [], [], [], []
+feed_rows = []
+def md(value):
+    return escape(value).replace('[', r'\[').replace(']', r'\]').replace('*', r'\*').replace('_', r'\_')
+
 for provider in data['providers']:
     events = sorted((event for event in data['events'] if event['provider'] == provider['id']), key=lambda event: timestamp(event['announcedAt']), reverse=True)
     if not events: raise ValueError('Missing provider events')
@@ -55,6 +66,7 @@ for provider in data['providers']:
     expected = event.get('expectedDate')
     overdue = announced and expected and expected < today
     source = url(event['source'])
+    repository = provider_repositories.get(provider['id'])
     confirmation = timestamp(event['announcedAt'])
     age = max(0, (now - confirmation).days)
     q = min(age / 30, 1)
@@ -113,13 +125,34 @@ for provider in data['providers']:
     note = '<p class="pelican-note">' + escape(t('bankedDate' if banked else 'enjoyTheRide' if riding else 'waitingNote')) + '</p>'
     if not riding and provider.get('pingHandle'):
         note = '<p class="pelican-note waiting-note">' + escape(t('waitingNote')) + '</p><div class="ping-request" hidden><p class="ping-days"></p><a class="ping-link" target="_blank" rel="noopener noreferrer">' + escape(t('ping', handle=provider['pingHandle'])) + '</a></div>'
+    status_text = t('feedAnnounced' if announced else 'feedNoPending')
+    details = t('feedPendingDetails') if announced else t('feedBankedDetails', date=date_label(event['announcedAt'])) if banked else t('feedCompletedDetails', date=date_label(event['announcedAt']))
+    if announced:
+        details += ' ' + (t('feedExpectedDate', date=expected) if expected else t('dateUnknown') + '.')
+    if event.get('scopeLabelKey'):
+        details += ' ' + t(event['scopeLabelKey'], date=date_label(event['announcedAt'])) + '.'
+    attribution = t('sourceBy', author=event.get('author', provider['company']), date=confirmation.strftime('%Y-%m-%d %H:%M UTC') if event.get('announcementPrecision') != 'day' else confirmation.strftime('%Y-%m-%d'))
+    quote = event.get('quote')
+    evidence = ('<figure class="source-quote"><blockquote><p>' + escape(quote) + '</p></blockquote><figcaption><a href="' + source + '" target="_blank" rel="noopener noreferrer">' + escape(attribution) + '</a></figcaption></figure>') if quote else ''
+    subscription = ('<div class="provider-subscription"><a class="github-action" href="' + url(repository, True) + '">' + escape(t('subscribeNext')) + '</a><p class="subscription-note">' + escape(t('watchHelp')) + '</p></div>') if repository else ''
+    evidence += '<p class="announcement-note">' + escape(details) + '</p>'
     cards.append(f'''<article class="provider {'announced' if riding else 'waiting'}" data-provider="{provider['id']}" style="--wait:{red}">
 <div class="provider-details"><h2 class="provider-name">{escape(provider['name'])}<span>{escape(provider['company'])}</span></h2>
 <p class="scope">{escape(scope)}</p><p class="when">{escape(shown_date)}</p>
 <a class="source" href="{source}" target="_blank" rel="noopener noreferrer">{escape(source_text)}</a></div>
-<div class="bird-stage"><div class="bird">{svg}</div></div>{note}</article>''')
+<div class="bird-stage"><div class="bird">{svg}</div></div>{note}
+<p class="feed-status">{escape(status_text)}</p>{evidence}{subscription}</article>''')
     records.append({**provider, 'announced':announced, 'banked':banked, 'expectedDate':expected, 'confirmedAt':event['announcedAt'], 'source':event['source'], 'scopeLabelKey':event.get('scopeLabelKey'), 'author':event.get('author', provider['company'])})
-    if not banked: rows.append(f"## {provider['name']} / {provider['company']}\n\n{row_state[0].upper() + row_state[1:]} · [announcement]({event['source']})")
+    source_md = f'[{md(attribution)}]({event["source"]})'
+    quote_md = '\n\n' + '\n'.join('> ' + md(line) for line in quote.splitlines()) if quote else ''
+    body = f'**{status_text}**\n\n{details}{quote_md}\n\n{source_md}'
+    rows.append(f"### {provider['name']} / {provider['company']}\n\n{body}")
+    feed_dir = ROOT / 'notifications' / provider['id']
+    feed_dir.mkdir(parents=True, exist_ok=True)
+    feed_readme = f"# {t('feedTitle', provider=provider['name'])}\n\n{t('feedIntro', provider=provider['name'])}\n\n## {t('currentStatus')}\n\n{body}\n\n## {t('notificationsHeading')}\n\n{t('subscribeExplanation', provider=provider['name'])}\n\n{t('resetNotifications')}\n\n{t('releaseMechanism')}\n\n[{t('allResets')}]({config['siteUrl']}) · [{t('sourceHistory')}]({config['sourceRepository']}/blob/main/data/events.json)\n"
+    (feed_dir / 'README.md').write_text(feed_readme)
+    if repository:
+        feed_rows.append(f"- [{t('feedTitle', provider=provider['name'])}]({repository})")
 today_plans = [record for record in records if record['announced'] and record['expectedDate'] == today]
 dated_plans = sorted((record for record in records if record['announced'] and record['expectedDate'] and record['expectedDate'] > today), key=lambda record:record['expectedDate'])
 undated_plans = [record for record in records if record['announced'] and not record['expectedDate']]
@@ -166,6 +199,6 @@ shutil.copy(ROOT/'data/events.json', OUT/'events.json')
 (OUT/'favicon.svg').write_text('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><rect width="40" height="40" rx="12" fill="#f6e8da"/><path d="M31 15A13 13 0 1 0 32 24" fill="none" stroke="#344a3c" stroke-width="3" stroke-linecap="round"/></svg>')
 readme_title = (', '.join(active) + (' reset is upcoming' if len(active)==1 else ' resets are upcoming')) if active else 'No need to rush'
 site_link = f"{t('checkWebsite')} — [{config['name']}]({config['siteUrl']})." if config.get('siteUrl') else f"{t('checkWebsite')} — {t('websiteComingSoon')}."
-readme = '# Free AI Coding' + '\n\n## ' + t('notificationsHeading') + '\n\n' + t('resetNotifications') + '\n\n## Limit resets\n\n' + '\n\n'.join(row.replace('## ', '### ', 1) for row in rows) + '\n\n' + site_link + '\n'
+readme = '# Free AI Coding' + '\n\n## ' + t('notificationsHeading') + '\n\n' + t('chooseFeed') + '\n\n' + '\n'.join(feed_rows) + '\n\n' + t('combinedFeed') + '\n\n' + t('resetNotifications') + '\n\n## ' + t('currentStatus') + '\n\n' + '\n\n'.join(rows) + '\n\n' + site_link + '\n'
 (ROOT/'minimal-README.md').write_text(readme)
 print('Built public/index.html and minimal-README.md. ' + ('Addresses pending: '+', '.join(missing) if missing else 'All public addresses configured.'))
