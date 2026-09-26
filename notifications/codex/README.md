@@ -1,30 +1,21 @@
-# Alerts for upcoming Codex usage-limit resets
+# upd 26.09 — a new codex reset is expected
 
-Whenever an upcoming Codex reset is announced, we publish a new GitHub release, giving you a chance to use your remaining tokens before your limits reset.
-
-## Subscribe with GitHub Releases
-
-For reset notifications: **Watch → Custom → Releases**.
-
-Sign in to GitHub and watch Releases. We publish one release per meaningful announcement or confirmation; README edits do not send alerts.
-
-[Read published alerts](https://github.com/inmve/codex-reset-alerts/releases)
-
-## Current status
-
-**Reset announced — awaiting confirmation**
-
-The source announces a reset. Completion has not been confirmed; check your account for availability. Date not announced. The announcement covers all paid users across Codex and ChatGPT Work.
+[tibo announced](https://x.com/thsottiaux/status/2103637477760311522) a reset for all paid users of Codex and ChatGPT Work:
 
 > we’ll reset usage limits for all paid users across codex and ChatGPT work
 
-[@thsottiaux · 2026-09-26 00:07 UTC · Original source](https://x.com/thsottiaux/status/2103637477760311522)
+the post doesn’t specify when the reset will happen or confirm that it’s complete.
 
-## Other feeds you can follow the same way
+## wanna receive alerts about resets?
 
-Choose a topic, open its repository, then select **Watch → Custom → Releases**. Each feed sends only updates for its own tool.
+sign in to GitHub and select **Watch → Custom → Releases** at the top of this repository. we publish a new release when a reset is announced or confirmed, so GitHub can notify you.
 
-- [Claude Code reset alerts](https://github.com/inmve/claude-reset-alerts)
-- [Grok Bot reset alerts](https://github.com/inmve/grok-reset-alerts)
+## why?
 
-[All reset updates on Next Reset](https://inmve.github.io/next-reset/) · [Source records and history](https://github.com/inmve/next-reset/blob/main/data/events.json)
+knowing when a reset is announced gives you a chance to use your remaining tokens: finish a feature, tackle a refactor, or try an idea you’ve been putting off. it also helps you plan bigger tasks around fresh limits, without checking for announcements yourself.
+
+## other feeds
+
+follow [Claude Code](https://github.com/inmve/claude-reset-alerts) and [Grok Bot](https://github.com/inmve/grok-reset-alerts) the same way. each repository covers one tool, so you can subscribe to the updates you care about.
+
+see all tracked announcements on [Next Reset](https://inmve.github.io/next-reset/).
