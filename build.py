@@ -150,7 +150,7 @@ for provider in data['providers']:
     feed_dir = ROOT / 'notifications' / provider['id']
     feed_dir.mkdir(parents=True, exist_ok=True)
     related = '\n'.join(f"- [{t('feedTitle', provider=other['name'])}]({provider_repositories[other['id']]})" for other in data['providers'] if other['id'] != provider['id'] and provider_repositories.get(other['id']))
-    feed_readme = f"# {t('feedTitle', provider=provider['name'])}\n\n{t('feedIntro', provider=provider['name'])}\n\n## {t('subscribeViaReleases')}\n\n{t('resetNotifications')}\n\n{t('releaseMechanism')}\n\n[{t('browseAlerts')}]({repository}/releases)\n\n## {t('currentStatus')}\n\n{body}\n\n## {t('otherFeeds')}\n\n{t('otherFeedsExplanation')}\n\n{related}\n\n[{t('allResets')}]({config['siteUrl']}) · [{t('sourceHistory')}]({config['sourceRepository']}/blob/main/data/events.json)\n"
+    feed_readme = f"# {t('codexFeedTitle' if provider['id'] == 'codex' else 'feedTitle', provider=provider['name'])}\n\n{t('codexFeedIntro' if provider['id'] == 'codex' else 'feedIntro', provider=provider['name'])}\n\n## {t('subscribeViaReleases')}\n\n{t('resetNotifications')}\n\n{t('releaseMechanism')}\n\n[{t('browseAlerts')}]({repository}/releases)\n\n## {t('currentStatus')}\n\n{body}\n\n## {t('otherFeeds')}\n\n{t('otherFeedsExplanation')}\n\n{related}\n\n[{t('allResets')}]({config['siteUrl']}) · [{t('sourceHistory')}]({config['sourceRepository']}/blob/main/data/events.json)\n"
     (feed_dir / 'README.md').write_text(feed_readme)
     if repository:
         feed_rows.append(f"- [{t('feedTitle', provider=provider['name'])}]({repository})")

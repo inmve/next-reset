@@ -1,14 +1,14 @@
 # GitHub Releases as topic subscriptions
 
 ## Current Status
-Last Updated: 2026-09-26T11:44:01.362541+00:00
-Status: Ready for Review
-Completion: 90%
+Last Updated: 2026-09-26T11:47:01.818662+00:00
+Status: Complete
+Completion: 100%
 
 ## Current Context
 Working: source event/release already published. README generator now leads with GitHub Releases as a way to follow a topic, followed by subscription instructions, current status, then links to other topic feeds.
-Incomplete: verify, PR, merge and remote verification for this presentation update.
-Next: run existing tests/build and check generated README links/order; publish through feature PRs.
+Incomplete: none. All four PRs merged, live README hashes match reviewed output, site deployment succeeded.
+Next: future source-backed announcements only. Current Codex release is already published.
 
 ## Original requests
 - «также в репо можешь похожие проекыт запустить»
@@ -35,7 +35,15 @@ Previous publication completion notes were locally modified. Preserved them in w
 
 ## Next Steps
 - [x] Validate generated content and existing tests.
-- [ ] Create and merge PRs, verify published READMEs.
+- [x] Create and merge PRs, verify published READMEs.
 - [x] Verify Codex event release is published: https://github.com/inmve/codex-reset-alerts/releases/tag/codex-reset-announced-2026-09-26
 
 - Validation: five generator tests, release build, JavaScript syntax and whitespace checks passed. Manual generated-output checks confirm subscription comes first and each feed links exactly to the other tool feeds.
+
+## Publication
+- Next Reset PR #23 and each dedicated feed PR #2 merged. All attached to this task.
+- README blobs in all three remote main branches match reviewed output.
+- Pages deployment 36239769344 passed.
+- Existing event release verified non-draft: https://github.com/inmve/codex-reset-alerts/releases/tag/codex-reset-announced-2026-09-26
+- No duplicate release for presentation edits.
+- Usage: 25%, baseline 21%, renewed increase 4 pp, 11 pp remaining; reset 1790755860.
