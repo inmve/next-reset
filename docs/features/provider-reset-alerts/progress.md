@@ -1,14 +1,14 @@
 # Provider reset alerts and September 26 Codex announcement
 
 ## Current Status
-Last Updated: 2026-09-26T11:36:30.285425+00:00
-Status: Ready for Review
-Completion: 95%
+Last Updated: 2026-09-26T11:41:44.656589+00:00
+Status: Complete
+Completion: 100%
 
 ## Current Context
 - Working: fresh main cloned/pulled for next-reset, free-ai-coding and token-limit-resets. Baseline release build and JavaScript syntax check pass. Original X post read directly.
-- Incomplete: final publication awaits user approval. All requested code/content and six PRs are prepared; source CI build passed. Two Codex event releases are drafts and have not notified subscribers.
-- Next on approval: merge the three tool-feed PRs first, then the two combined-feed PRs, then Next Reset #22; verify Pages deploy and live source/quote/buttons; publish the two prepared Codex announcement drafts (dedicated Codex and active combined free-ai-coding). Check for duplicates and set release target to merged main before publication.
+- Incomplete: none for this request. All six PRs merged, Pages deployment passed, live site verified, both Codex releases published.
+- Next: future source-backed reset announcements can follow the documented per-tool feed workflow. Exit-intent creature remains a backlog idea.
 
 ## Original requests
 1. «так, найди тот проект по кодекса апдейтам и давай заапдейтим уже вот это: https://x.com/i/status/2103637477760311522»
@@ -43,7 +43,7 @@ Completion: 95%
 - [x] Prepare notification repositories and concrete release draft.
 - [x] Run tests/build/syntax/diff checks and inspect rendered site.
 - [x] Create/attach PRs; present final publication step.
-- [ ] Merge approved PRs, verify Pages deployment, then publish the prepared Codex alert drafts.
+- [x] Merge approved PRs, verify Pages deployment, then publish the prepared Codex alert drafts.
 
 - 2026-09-26: Added five regression tests; observed failures before implementation. Implemented event/quote rendering, separate generated feeds, per-provider subscriptions and EN/RU locale text; all five tests pass. Added exit-intent creature to backlog. Browser inspection confirms original quote, link and provider buttons; remote repositories and publication pending.
 
@@ -85,3 +85,15 @@ Renewed allowance baseline 21%; latest account-wide reading 23%, +2 pp, 13 pp re
 - Publication order prevents website buttons pointing at incomplete feeds. Source repository remains authoritative; feeds are generated snapshots and manually published releases, not a new automatic monitoring service.
 - Browser check: desktop and 375px quote/CTA layout inspected; mobile contentWidth=375 equals viewport width=375.
 - No application code or README updates pushed directly to existing main branches. New repository initialization used GitHub's standard default README; all final feed content is in feature PRs.
+
+## Publication complete — 2026-09-26T11:41:44.656589+00:00
+- User authorization: «можешь довести до готовности что б мне оставалось лишь ссылку на гихаб репу запустить».
+- All six PRs merged, with expected-head checks. Remote main README hashes verified against reviewed generated files.
+- Next Reset merge commit: 36d18f2b7728d1a1372d12f2a027801b4af0bb21. Pages run 36239421175 succeeded; live page verified in browser.
+- Dedicated Codex release published 2026-09-26T11:39:19Z: https://github.com/inmve/codex-reset-alerts/releases/tag/codex-reset-announced-2026-09-26
+- Combined release published 2026-09-26T11:39:21Z: https://github.com/inmve/free-ai-coding/releases/tag/codex-reset-announced-2026-09-26
+- Both releases are non-draft and target main. GitHub handles subscriber notification delivery; individual receipt is not observable.
+- Share-ready repository: https://github.com/inmve/codex-reset-alerts
+- Website: https://inmve.github.io/next-reset/
+- These completion notes are local handoff updates after the reviewed feature branches were merged. No further product changes pending.
+- Weekly guard: renewed baseline 21%, final usage 24%, increase 3 pp, 12 pp remaining of renewed allowance; reset 1790755860.

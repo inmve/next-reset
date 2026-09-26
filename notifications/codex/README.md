@@ -1,6 +1,14 @@
 # Codex reset alerts
 
-Source-linked announcements and confirmations of Codex usage-limit resets. This feed is maintained manually.
+Follow Codex reset news through GitHub Releases. One repository is one topic: every new announcement or confirmation becomes a release you can subscribe to.
+
+## Subscribe with GitHub Releases
+
+For reset notifications: **Watch → Custom → Releases**.
+
+Sign in to GitHub and watch Releases. We publish one release per meaningful announcement or confirmation; README edits do not send alerts.
+
+[Read published alerts](https://github.com/inmve/codex-reset-alerts/releases)
 
 ## Current status
 
@@ -12,12 +20,11 @@ The source announces a reset. Completion has not been confirmed; check your acco
 
 [@thsottiaux · 2026-09-26 00:07 UTC · Original source](https://x.com/thsottiaux/status/2103637477760311522)
 
-## Get notifications
+## Other feeds you can follow the same way
 
-Subscribe to hear when a new Codex reset is announced or confirmed.
+Choose a topic, open its repository, then select **Watch → Custom → Releases**. Each feed sends only updates for its own tool.
 
-For reset notifications: **Watch → Custom → Releases**.
-
-Sign in to GitHub and watch Releases. We publish one release per meaningful announcement or confirmation; README edits do not send alerts.
+- [Claude Code reset alerts](https://github.com/inmve/claude-reset-alerts)
+- [Grok Bot reset alerts](https://github.com/inmve/grok-reset-alerts)
 
 [All reset updates on Next Reset](https://inmve.github.io/next-reset/) · [Source records and history](https://github.com/inmve/next-reset/blob/main/data/events.json)
