@@ -58,7 +58,8 @@ class BuildTests(unittest.TestCase):
         for provider in ('codex', 'claude', 'grok'):
             readme = (self.root / f'notifications/{provider}/README.md').read_text()
             self.assertIn('Watch → Custom → Releases', readme)
-            self.assertIn('https://x.com/', readme)
+            event = max((e for e in self.data['events'] if e['provider'] == provider), key=lambda e: e['announcedAt'])
+            self.assertIn(event['source'], readme)
             self.assertNotIn('### ' + ('Claude Code' if provider == 'codex' else 'Codex'), readme)
         codex = (self.root / 'notifications/codex/README.md').read_text()
         self.assertIn('> ' + QUOTE, codex)
@@ -86,6 +87,19 @@ class BuildTests(unittest.TestCase):
         self.assertNotIn('<script>alert(1)</script>', page)
         self.assertIn('Подписаться на следующий сброс', page)
         self.assertIn('Завершение сброса пока не подтверждено', page)
+
+    def test_announced_cards_quote_their_source_and_link_their_own_feed(self):
+        import re
+        self.build()
+        page = (self.root / 'public/index.html').read_text()
+        for provider in ('codex', 'claude', 'grok'):
+            card = re.search(r'<article[^>]*data-provider="' + provider + r'".*?</article>', page, re.S).group()
+            self.assertIn(self.config['providerRepositories'][provider], card)
+            if provider in ('codex', 'claude'):
+                event = max((e for e in self.data['events'] if e['provider'] == provider), key=lambda e: e['announcedAt'])
+                self.assertIn('<blockquote>', card)
+                self.assertIn(event['quote'], card)
+                self.assertIn(event['source'], card)
 
     def test_release_requires_all_provider_repository_urls(self):
         del self.config['providerRepositories']['codex']

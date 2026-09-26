@@ -128,9 +128,14 @@
   "codexNewsSubscribeTitle": "how to subscribe?",
   "codexNewsSubscribe": "select **Watch → Custom → Releases** at the top of this repo.\n\nwe post reset updates as releases so you get a GitHub notification.",
   "codexNewsWhyTitle": "why?",
-  "codexNewsWhy": "use your remaining tokens before the reset.",
+  "codexNewsWhy": "get an alert to use your remaining tokens before the reset.",
   "codexNewsOtherTitle": "other tools?",
   "codexNewsOther": "follow [Claude Code]({claude}) and [Grok Bot]({grok}) the same way.",
   "codexNewsOverview": "see reset announcements on [Next Reset]({site}).",
-  "codexNewsOverviewTitle": "web version?"
+  "codexNewsOverviewTitle": "web version?",
+  "claudeNewsAnnounced": "a new claude reset is expected",
+  "claudeNewsBanked": "a claude reset you can save for later",
+  "claudeNewsCompleted": "a claude reset has been confirmed",
+  "claudeSeptember22News": "[anthropic announced]({source}) a reset for subscription users:",
+  "claudeNewsOther": "follow [Codex]({codex}) and [Grok Bot]({grok}) the same way."
 }

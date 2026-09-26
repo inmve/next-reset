@@ -128,9 +128,14 @@
   "codexNewsSubscribeTitle": "как подписаться?",
   "codexNewsSubscribe": "выбери **Watch → Custom → Releases** вверху страницы.\n\nмы публикуем обновления о сбросах как релизы, чтобы ты получал уведомления GitHub.",
   "codexNewsWhyTitle": "зачем?",
-  "codexNewsWhy": "используй оставшиеся токены до сброса.",
+  "codexNewsWhy": "получи уведомление, чтобы использовать оставшиеся токены до сброса.",
   "codexNewsOtherTitle": "другие инструменты?",
   "codexNewsOther": "подпишись на [Claude Code]({claude}) и [Grok Bot]({grok}) таким же способом.",
   "codexNewsOverview": "смотри объявления о сбросах на [Next Reset]({site}).",
-  "codexNewsOverviewTitle": "веб-версия?"
+  "codexNewsOverviewTitle": "веб-версия?",
+  "claudeNewsAnnounced": "ожидается новый сброс лимитов claude",
+  "claudeNewsBanked": "сброс claude можно сохранить на потом",
+  "claudeNewsCompleted": "сброс claude подтверждён",
+  "claudeSeptember22News": "[anthropic объявила]({source}) о сбросе для пользователей с подпиской:",
+  "claudeNewsOther": "подпишись на [Codex]({codex}) и [Grok Bot]({grok}) таким же способом."
 }

@@ -14,7 +14,7 @@ we post reset updates as releases so you get a GitHub notification.
 
 ## why?
 
-use your remaining tokens before the reset.
+get an alert to use your remaining tokens before the reset.
 
 ## other tools?
 
