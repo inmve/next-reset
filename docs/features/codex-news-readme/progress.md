@@ -32,3 +32,9 @@ build.py; data/events.json; locales/en.json and ru.json; generated notifications
 - [ ] Create/merge PRs and verify publication.
 
 Validation: five tests, release build, JavaScript syntax and whitespace checks passed. Inspected generated README against approved draft; only subscription heading reflects the user’s final correction.
+
+## Follow-up copy feedback
+- «какой декспришен бы показал что б он был в том же стиле» — propose a matching About description in chat; no metadata change approved yet.
+- «sign in to GitHub --> можно наверное дропнуть ведь юзер уже тут? ... упрости и перенеси на новую строку - один параграф на отдельной строке»
+- «никаких сложных предложений - должен читаться максимально просто»
+- Removed sign-in opening. Subscription steps, release explanation and notification result are separate short paragraphs. Simplified why/other-feed/uncertainty copy into short sentences. Updated both locales.

@@ -4,18 +4,30 @@
 
 > we’ll reset usage limits for all paid users across codex and ChatGPT work
 
-the post doesn’t specify when the reset will happen or confirm that it’s complete.
+the post gives no reset time.
+
+we’re still waiting for confirmation.
 
 ## wanna receive alerts about resets?
 
-sign in to GitHub and select **Watch → Custom → Releases** at the top of this repository. we publish a new release when a reset is announced or confirmed, so GitHub can notify you.
+select **Watch → Custom → Releases** at the top of this repo.
+
+we post reset updates as releases.
+
+you get a GitHub notification.
 
 ## why?
 
-knowing when a reset is announced gives you a chance to use your remaining tokens: finish a feature, tackle a refactor, or try an idea you’ve been putting off. it also helps you plan bigger tasks around fresh limits, without checking for announcements yourself.
+an early alert helps you use your remaining tokens before the reset.
+
+finish a feature. try an idea. tackle a refactor.
+
+plan your next big task around fresh limits.
 
 ## other feeds
 
-follow [Claude Code](https://github.com/inmve/claude-reset-alerts) and [Grok Bot](https://github.com/inmve/grok-reset-alerts) the same way. each repository covers one tool, so you can subscribe to the updates you care about.
+follow [Claude Code](https://github.com/inmve/claude-reset-alerts) and [Grok Bot](https://github.com/inmve/grok-reset-alerts) the same way.
+
+each repo covers one tool. choose the alerts you want.
 
 see all tracked announcements on [Next Reset](https://inmve.github.io/next-reset/).
