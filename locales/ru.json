@@ -124,12 +124,13 @@
   "codexNewsBanked": "объявлен сохранённый сброс codex",
   "codexNewsCompleted": "сброс codex подтверждён",
   "codexSeptember26News": "[тибо объявил]({source}) о сбросе лимитов для всех платных пользователей Codex и ChatGPT Work:",
-  "codexNewsUnconfirmed": "в посте не указано время сброса.\n\nмы ещё ждём подтверждения.",
-  "codexNewsSubscribeTitle": "хочешь получать уведомления о сбросах?",
-  "codexNewsSubscribe": "выбери **Watch → Custom → Releases** вверху страницы.\n\nмы публикуем обновления о сбросах как релизы.\n\nты получаешь уведомление GitHub.",
+  "codexNewsUnconfirmed": "в посте не указано время сброса.",
+  "codexNewsSubscribeTitle": "как подписаться?",
+  "codexNewsSubscribe": "выбери **Watch → Custom → Releases** вверху страницы.\n\nмы публикуем обновления о сбросах как релизы, чтобы ты получал уведомления GitHub.",
   "codexNewsWhyTitle": "зачем?",
-  "codexNewsWhy": "раннее уведомление помогает использовать оставшиеся токены до сброса.\n\nзакончи фичу. попробуй идею. займись рефакторингом.\n\nзапланируй следующую большую задачу на свежие лимиты.",
-  "codexNewsOtherTitle": "другие ленты",
-  "codexNewsOther": "подпишись на [Claude Code]({claude}) и [Grok Bot]({grok}) таким же способом.\n\nкаждый репозиторий посвящён одному инструменту. выбери нужные уведомления.",
-  "codexNewsOverview": "все отслеживаемые объявления — на [Next Reset]({site})."
+  "codexNewsWhy": "используй оставшиеся токены до сброса.",
+  "codexNewsOtherTitle": "другие инструменты?",
+  "codexNewsOther": "подпишись на [Claude Code]({claude}) и [Grok Bot]({grok}) таким же способом.",
+  "codexNewsOverview": "смотри объявления о сбросах на [Next Reset]({site}).",
+  "codexNewsOverviewTitle": "веб-версия?"
 }

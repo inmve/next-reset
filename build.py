@@ -158,7 +158,7 @@ for provider in data['providers']:
             news = t(event['readmeSummaryKey'], source=event['source']) + quote_md
             if announced:
                 news += '\n\n' + (t('codexNewsUnconfirmed') if not expected else t('feedExpectedDate', date=expected) + ' ' + t('feedPendingDetails'))
-        feed_readme = f"# upd {confirmation.strftime('%d.%m')} — {headline}\n\n{news}\n\n## {t('codexNewsSubscribeTitle')}\n\n{t('codexNewsSubscribe')}\n\n## {t('codexNewsWhyTitle')}\n\n{t('codexNewsWhy')}\n\n## {t('codexNewsOtherTitle')}\n\n{t('codexNewsOther', claude=provider_repositories['claude'], grok=provider_repositories['grok'])}\n\n{t('codexNewsOverview', site=config['siteUrl'])}\n"
+        feed_readme = f"# upd {confirmation.strftime('%d.%m')} — {headline}\n\n{news}\n\n## {t('codexNewsSubscribeTitle')}\n\n{t('codexNewsSubscribe')}\n\n## {t('codexNewsWhyTitle')}\n\n{t('codexNewsWhy')}\n\n## {t('codexNewsOtherTitle')}\n\n{t('codexNewsOther', claude=provider_repositories['claude'], grok=provider_repositories['grok'])}\n\n## {t('codexNewsOverviewTitle')}\n\n{t('codexNewsOverview', site=config['siteUrl'])}\n"
     (feed_dir / 'README.md').write_text(feed_readme)
     if repository:
         feed_rows.append(f"- [{t('feedTitle', provider=provider['name'])}]({repository})")
