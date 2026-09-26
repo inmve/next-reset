@@ -21,7 +21,8 @@
       "quote": "we’ll reset usage limits for all paid users across codex and ChatGPT work",
       "verification": "original_post_read",
       "verifiedAt": "2026-09-26T11:25:23.705553+00:00",
-      "evidence": "Original X post read directly in the browser on 2026-09-26. Tibo says service is back and promises usage-limit resets. No date, completion confirmation or banked-reset mechanism is stated."
+      "evidence": "Original X post read directly in the browser on 2026-09-26. Tibo says service is back and promises usage-limit resets. No date, completion confirmation or banked-reset mechanism is stated.",
+      "readmeSummaryKey": "codexSeptember26News"
     },
     {
       "id": "codex-banked-reset-2026-09-22",

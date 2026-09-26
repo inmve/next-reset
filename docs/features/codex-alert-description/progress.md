@@ -1,14 +1,14 @@
 # Codex alert title and description
 
 ## Current Status
-Last Updated: 2026-09-26T11:48:34.591138+00:00
-Status: In Progress
-Completion: 65%
+Last Updated: 2026-09-26T11:50:48.665867+00:00
+Status: Complete
+Completion: 100%
 
 ## Current Context
 Working: wording corrected; Codex-specific title/intro use real EN/RU locale keys in canonical generator. Original reset quote and release preserved.
-Incomplete: verify, publish feature PRs, update repository About description, verify live output.
-Next: build/test, copy generated README, create/merge source and feed PRs, set About description.
+Incomplete: none. About metadata and README title/intro are published and verified.
+Next: future source-backed announcements.
 
 ## Original request
 «можно явно сказать в описании гихаба и в тайтле - Alerting the upcoming codex limit resets. Whenver codex is known to get reseted, a new release of tis repo is published so you get a chance to spend all your remaining tokens before limits are rests (поправь gramma)»
@@ -27,5 +27,13 @@ Previous local handoff edits preserved in work/releases-as-subscriptions-complet
 build.py; locales/en.json; locales/ru.json; generated notifications/codex/README.md and public/index.html; Codex feed README.md; this progress log. GitHub About metadata to be updated.
 
 ## Next Steps
-- [ ] Validate and publish PRs.
-- [ ] Update About and verify live title/description.
+- [x] Validate and publish PRs.
+- [x] Update About and verify live title/description.
+
+## Completion
+- Source PR #24 and Codex feed PR #3 merged and attached to task.
+- Five tests, release build, JavaScript syntax and whitespace checks passed.
+- GitHub About description read back exactly; remote main README hash matches local reviewed generated file.
+- Final title: Alerts for upcoming Codex usage-limit resets.
+- No new event release needed for wording-only changes; original published event remains linked.
+- Shell readback initially used an unquoted question mark in an API URL; retried with quoted URL and verified successfully. No publication was affected.

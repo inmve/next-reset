@@ -119,5 +119,17 @@
   "otherFeeds": "Other feeds you can follow the same way",
   "otherFeedsExplanation": "Choose a topic, open its repository, then select **Watch → Custom → Releases**. Each feed sends only updates for its own tool.",
   "codexFeedTitle": "Alerts for upcoming Codex usage-limit resets",
-  "codexFeedIntro": "Whenever an upcoming Codex reset is announced, we publish a new GitHub release, giving you a chance to use your remaining tokens before your limits reset."
+  "codexFeedIntro": "Whenever an upcoming Codex reset is announced, we publish a new GitHub release, giving you a chance to use your remaining tokens before your limits reset.",
+  "codexNewsAnnounced": "a new codex reset is expected",
+  "codexNewsBanked": "a banked codex reset has been announced",
+  "codexNewsCompleted": "a codex reset has been confirmed",
+  "codexSeptember26News": "[tibo announced]({source}) a reset for all paid users of Codex and ChatGPT Work:",
+  "codexNewsUnconfirmed": "the post gives no reset time.\n\nwe’re still waiting for confirmation.",
+  "codexNewsSubscribeTitle": "wanna receive alerts about resets?",
+  "codexNewsSubscribe": "select **Watch → Custom → Releases** at the top of this repo.\n\nwe post reset updates as releases.\n\nyou get a GitHub notification.",
+  "codexNewsWhyTitle": "why?",
+  "codexNewsWhy": "an early alert helps you use your remaining tokens before the reset.\n\nfinish a feature. try an idea. tackle a refactor.\n\nplan your next big task around fresh limits.",
+  "codexNewsOtherTitle": "other feeds",
+  "codexNewsOther": "follow [Claude Code]({claude}) and [Grok Bot]({grok}) the same way.\n\neach repo covers one tool. choose the alerts you want.",
+  "codexNewsOverview": "see all tracked announcements on [Next Reset]({site})."
 }

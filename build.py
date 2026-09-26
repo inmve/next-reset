@@ -151,6 +151,14 @@ for provider in data['providers']:
     feed_dir.mkdir(parents=True, exist_ok=True)
     related = '\n'.join(f"- [{t('feedTitle', provider=other['name'])}]({provider_repositories[other['id']]})" for other in data['providers'] if other['id'] != provider['id'] and provider_repositories.get(other['id']))
     feed_readme = f"# {t('codexFeedTitle' if provider['id'] == 'codex' else 'feedTitle', provider=provider['name'])}\n\n{t('codexFeedIntro' if provider['id'] == 'codex' else 'feedIntro', provider=provider['name'])}\n\n## {t('subscribeViaReleases')}\n\n{t('resetNotifications')}\n\n{t('releaseMechanism')}\n\n[{t('browseAlerts')}]({repository}/releases)\n\n## {t('currentStatus')}\n\n{body}\n\n## {t('otherFeeds')}\n\n{t('otherFeedsExplanation')}\n\n{related}\n\n[{t('allResets')}]({config['siteUrl']}) · [{t('sourceHistory')}]({config['sourceRepository']}/blob/main/data/events.json)\n"
+    if provider['id'] == 'codex':
+        headline = t('codexNewsAnnounced' if announced else 'codexNewsBanked' if banked else 'codexNewsCompleted')
+        news = body
+        if event.get('readmeSummaryKey'):
+            news = t(event['readmeSummaryKey'], source=event['source']) + quote_md
+            if announced:
+                news += '\n\n' + (t('codexNewsUnconfirmed') if not expected else t('feedExpectedDate', date=expected) + ' ' + t('feedPendingDetails'))
+        feed_readme = f"# upd {confirmation.strftime('%d.%m')} — {headline}\n\n{news}\n\n## {t('codexNewsSubscribeTitle')}\n\n{t('codexNewsSubscribe')}\n\n## {t('codexNewsWhyTitle')}\n\n{t('codexNewsWhy')}\n\n## {t('codexNewsOtherTitle')}\n\n{t('codexNewsOther', claude=provider_repositories['claude'], grok=provider_repositories['grok'])}\n\n{t('codexNewsOverview', site=config['siteUrl'])}\n"
     (feed_dir / 'README.md').write_text(feed_readme)
     if repository:
         feed_rows.append(f"- [{t('feedTitle', provider=provider['name'])}]({repository})")
